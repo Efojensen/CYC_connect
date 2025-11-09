@@ -12,13 +12,14 @@ const SearchBar = () => {
                 value={text}
                 placeholder='search here...'
                 onChange={(e) => {setText(e.target.value)}}
-                className='focus:outline-none'
+                className='focus:outline-none w-full'
             />
             <Image
                 width={24}
                 height={24}
                 alt='search icon'
                 src='/svgs/search.svg'
+                className='hover:cursor-pointer'
             />
         </div>
     )

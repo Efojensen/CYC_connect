@@ -20,7 +20,7 @@ const InfoTile:React.FC<InfoTileProps> = ({ title, imgUrl, previewContent, alt }
 
             <div className='flex flex-col px-4'>
                 <h5 className='capitalize font-medium text-[1rem] lora-font text-sectionTitleColor text-ellipsis mb-4'>{title}</h5>
-                <p className='text-sm leading-5 capitalize tracking-[.0156rem] inter-font text-ellipsis text-[rgba(62, 50, 50, 0.75)]'>{previewContent}</p>
+                <p className='text-[.9375rem] leading-5 capitalize tracking-[.0156rem] inter-font text-ellipsis text-[#3e3232] opacity-75 line-clamp-2'>{previewContent}</p>
             </div>
         </div>
     )
