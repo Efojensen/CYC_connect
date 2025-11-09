@@ -53,6 +53,14 @@ body {
     font-family: var(--font-manrope);
 }
 
+.dancing_script-font {
+    font-family: var(--font-dancing_script);
+}
+
+.lato-font {
+    font-family: var(--font-lato)
+}
+
 .navBar {
     @apply flex w-full py-2.25 pl-20.5 pr-10.5 justify-around items-center
 }

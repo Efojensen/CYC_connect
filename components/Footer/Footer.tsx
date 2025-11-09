@@ -1,6 +1,9 @@
+import Link from "next/link"
 import Image from "next/image"
+import InputBar from "./InputBar"
 import LinkBlock from "./LinkBlock"
 import SocialLink from "./SocialLink"
+import { WhiteFilledRoundedButton } from "@components/Buttons"
 import { pageLinks_1, pageLinks_2, pageLinks_3, socialLinks } from "./constants"
 
 const Footer = () => {
@@ -44,6 +47,47 @@ const Footer = () => {
                         title='legal & support'
                         links={pageLinks_3}
                     />
+                </div>
+
+                <div className='flex flex-col mt-20'>
+                    <p className='text-[2rem] text-white dancing_script-font mb-2.5'>Our Newsletter</p>
+                    <InputBar placeholder={'Email Address'}/>
+                    <div className='flex mt-3.75 gap-4.25'>
+                        <InputBar placeholder={'First Name'}/>
+                        <WhiteFilledRoundedButton label='Sign Up'/>
+                    </div>
+                </div>
+            </div>
+
+            <hr className='w-full mt-20.5 h-[.0313rem] text-[#999999]'/>
+
+            <div className='flex mt-4 ml-8.25'>
+                <p className='text-sm tracking-[-0.0262rem] inter-font text-white mr-36.25'>2025 © Company Ltd. All rights reserved.</p>
+                <div className='flex gap-12.5'>
+                    <Link
+                        href='terms-conditions'
+                        className='italic font-extralight text-sm text-[#999999] tracking-[-0.0262rem] capitalize'
+                    >
+                        Terms & Conditions
+                    </Link>
+                    <Link
+                        href='terms-conditions'
+                        className='italic font-extralight text-sm text-[#999999] tracking-[-0.0262rem] capitalize'
+                    >
+                        privacy policy
+                    </Link>
+                    <Link
+                        href='terms-conditions'
+                        className='italic font-extralight text-sm text-[#999999] tracking-[-0.0262rem] capitalize'
+                    >
+                        security
+                    </Link>
+                    <Link
+                        href='terms-conditions'
+                        className='italic font-extralight text-sm text-[#999999] tracking-[-0.0262rem] capitalize'
+                    >
+                        cookie consent
+                    </Link>
                 </div>
             </div>
 
