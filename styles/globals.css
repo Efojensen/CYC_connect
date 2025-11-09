@@ -17,10 +17,12 @@
 }
 
 @theme inline {
+    --color-footerTextColor: #8C94A3;
     --color-sectionTitleColor: #3E3232;
     --color-mainNavTileActive: #FEDA00;
     --color-searchFieldTextColor: #ABABAB;
     --color-searchFieldBackground: #F7F7F7;
+    --color-footerBackgroundColor: #0D2E40;
     --color-subNavBarTileBackground: #044A72;
     --color-tertiaryNavBarBackground: #05293E;
 
@@ -61,4 +63,8 @@ body {
 
 .tertiaryNavBar {
     @apply flex w-full py-12 pl-75 bg-tertiaryNavBarBackground
+}
+
+.footer {
+    @apply flex flex-col pl-22.25 pr-26 pt-13.75 bg-footerBackgroundColor pb-11.5 mt-10
 }

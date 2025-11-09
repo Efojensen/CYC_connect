@@ -4,6 +4,7 @@ import { Nav } from "@components/navBar";
 import { Geist, Geist_Mono, Inter, Manrope } from "next/font/google";
 import SubNavBar from "@components/subNavBar/SubNavBar";
 import TertiaryNavBar from "@components/TertiaryNavBar";
+import Footer from "@components/Footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,6 +48,7 @@ export default function RootLayout({
         <SubNavBar/>
         <TertiaryNavBar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
