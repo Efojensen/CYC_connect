@@ -17,6 +17,7 @@
 }
 
 @theme inline {
+    --color-sectionTitleColor: #3E3232;
     --color-mainNavTileActive: #FEDA00;
     --color-searchFieldTextColor: #ABABAB;
     --color-searchFieldBackground: #F7F7F7;
