@@ -20,6 +20,9 @@
     --color-mainNavTileActive: #FEDA00;
     --color-searchFieldTextColor: #ABABAB;
     --color-searchFieldBackground: #F7F7F7;
+    --color-subNavBarTileBackground: #044A72;
+    --color-tertiaryNavBarBackground: #05293E;
+
     --color-background: var(--background);
     --color-foreground: var(--foreground);
     --font-sans: var(--font-geist-sans);
@@ -39,6 +42,22 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.inter-font {
+    font-family: var(--font-inter);
+}
+
+.manrope-font {
+    font-family: var(--font-manrope);
+}
+
 .navBar {
     @apply flex w-full py-2.25 pl-20.5 pr-10.5 justify-around items-center
+}
+
+.subNavBar {
+    @apply flex w-full py-4.75 pl-12.25 pr-10.25 bg-subNavBarTileBackground justify-between
+}
+
+.tertiaryNavBar {
+    @apply flex w-full py-12 pl-75 bg-tertiaryNavBarBackground
 }

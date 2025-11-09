@@ -1,7 +1,9 @@
-import { Nav } from "@components/navBar";
 import "@styles/globals.css";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Nav } from "@components/navBar";
+import { Geist, Geist_Mono, Inter, Manrope } from "next/font/google";
+import SubNavBar from "@components/subNavBar/SubNavBar";
+import TertiaryNavBar from "@components/TertiaryNavBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,6 +14,19 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const inter = Inter({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter'
+})
+
+const manrope = Manrope({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  variable: '--font-manrope'
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,9 +41,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${manrope.variable} antialiased`}
       >
-        <Nav/>
+        <Nav />
+        <SubNavBar/>
+        <TertiaryNavBar/>
         {children}
       </body>
     </html>
