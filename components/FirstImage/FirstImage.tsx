@@ -12,7 +12,7 @@ interface FirstImageProps {
 
 const FirstImage: React.FC<FirstImageProps> = ({ date, image, month, title, author }) => {
     return (
-        <div className='flex flex-col relative items-center'>
+        <div className='flex flex-col relative items-center mb-17.5'>
             <Image
                 src={image}
                 width={1512}
@@ -24,7 +24,7 @@ const FirstImage: React.FC<FirstImageProps> = ({ date, image, month, title, auth
             <div className='flex flex-col absolute w-full items-center'>
                 <MonthTile month={month} />
 
-                <p className='mt-[.8762rem] text-center loto-font text-[2.5rem] font-medium text-white capitalize'>{title}</p>
+                <p className='mt-[.8762rem] text-center lora-font text-[2.5rem] font-medium text-white capitalize'>{title}</p>
 
                 <div className='flex gap-x-3.75 mt-12.5'>
                     <MetaTile
@@ -45,8 +45,6 @@ const FirstImage: React.FC<FirstImageProps> = ({ date, image, month, title, auth
                     />
                 </div>
             </div>
-
-
         </div>
     )
 }
