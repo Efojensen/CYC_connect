@@ -28,6 +28,33 @@ const events: InfoTileProps[] = [
     previewContent: 'Deepen your spiritual journey this Lent with our annual retreat focusing on prayer, fasting, and alms giving in preparation for Easter.'
   }
 ]
+
+const formations: InfoTileProps[] = [
+  {
+    title: 'RCIA Program',
+    alt: 'Group of adults participating in RCIA classes',
+    imgUrl: '/images/5.jpg',
+    previewContent: 'Join our Rite of Christian Initiation for Adults to learn about Catholic faith and prepare for sacraments of initiation.'
+  },
+  {
+    title: 'Bible Study Series',
+    alt: 'Small group studying the Bible together',
+    imgUrl: '/images/6.jpg',
+    previewContent: 'Deepen your understanding of Scripture through our weekly Bible study exploring the Gospels and Church teachings.'
+  },
+  {
+    title: 'Marriage Preparation',
+    alt: 'Engaged couple meeting with priest for marriage preparation',
+    imgUrl: '/images/7.jpg',
+    previewContent: 'Prepare for the sacrament of Matrimony with our comprehensive marriage preparation program and FOCCUS inventory.'
+  },
+  {
+    title: 'Youth Catechism',
+    alt: 'Teenagers learning catechism in classroom setting',
+    imgUrl: '/images/8.jpg',
+    previewContent: 'Youth faith formation program teaching Catholic doctrine and helping young people grow in their relationship with Christ.'
+  }
+]
 export default function Home() {
   return (
     <main className='mt-17.5 px-27'>
@@ -40,21 +67,39 @@ export default function Home() {
         date={new Date}
       />
 
-      <SectionTitle title='Reflections'/>
+      <section>
+        <SectionTitle title='Reflections'/>
+        <div className='flex gap-6'>
+          {
+            events.map((event, index) => (
+              <InfoTile
+                key={index}
+                alt={event.alt}
+                title={event.title}
+                imgUrl={event.imgUrl}
+                previewContent={event.previewContent}
+              />
+            ))
+          }
+        </div>
+      </section>
 
-      <div className='flex gap-6'>
-        {
-          events.map((event, index) => (
-            <InfoTile
-              key={index}
-              alt={event.alt}
-              title={event.title}
-              imgUrl={event.imgUrl}
-              previewContent={event.previewContent}
-            />
-          ))
-        }
-      </div>
+      <section className='my-38'>
+        <SectionTitle title='Formations'/>
+        <div className='flex gap-6'>
+          {
+            formations.map((formation, index) => (
+              <InfoTile
+                key={index}
+                alt={formation.alt}
+                title={formation.title}
+                imgUrl={formation.imgUrl}
+                previewContent={formation.previewContent}
+              />
+            ))
+          }
+        </div>
+      </section>
     </main>
   );
 }

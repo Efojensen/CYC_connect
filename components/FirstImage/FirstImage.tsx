@@ -23,7 +23,7 @@ const FirstImage: React.FC<FirstImageProps> = ({ date, image, month, title, auth
                     className='w-full aspect-1512/530 object-cover'
                 />
                 {/* Gradient Overlay */}
-                <div className='absolute inset-0 bg-linear-to-t from-black via-[rgba(0,0,0,0.55)] to-transparent to-53.96%' />
+                <div className='absolute inset-0 bg-linear-to-t from-black via-[rgba(0,0,0,0.55)] to-transparent to-53.96%'/>
             </div>
 
             <div className='flex flex-col absolute w-full items-center bottom-0 mb-20'>

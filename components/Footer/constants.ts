@@ -57,7 +57,7 @@ export const pageLinks_2: FooterLink[] = [
         text: 'career guidance'
     },
     {
-        href: '/national calender',
+        href: '/national-calender',
         text: 'national calender'
     },
 ]

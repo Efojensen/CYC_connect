@@ -9,16 +9,16 @@ export interface InfoTileProps {
 
 const InfoTile:React.FC<InfoTileProps> = ({ title, imgUrl, previewContent, alt }) => {
     return (
-        <div className='flex flex-col'>
+        <div className='flex flex-col rounded-b-xl shadow-[0_0_32px_0_rgba(0,0,0,0.07)]'>
             <Image
                 alt={alt}
                 width={360}
                 height={200}
                 src={imgUrl}
-                className='rounded-t-2xl mb-4'
+                className='rounded-t-xl mb-4 h-50'
             />
 
-            <div className='flex flex-col px-4'>
+            <div className='flex flex-col px-4 mb-4'>
                 <h5 className='capitalize font-medium text-[1rem] lora-font text-sectionTitleColor text-ellipsis mb-4'>{title}</h5>
                 <p className='text-sm leading-5 capitalize tracking-[.0156rem] inter-font text-ellipsis text-[#3e3232] opacity-75 line-clamp-2'>{previewContent}</p>
             </div>

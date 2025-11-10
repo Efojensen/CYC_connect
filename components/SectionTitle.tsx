@@ -4,7 +4,7 @@ const SectionTitle = ({title}: {title: string}) => {
     return (
         <div className='flex gap-1.5 items-center mb-9.25'>
             <div  className='flex w-1 h-2.5 bg-[#F81539] rounded-xl'/>
-            <p className='text-[1.25rem] capitalize font-medium lora-font text-sectionTitleColor'>{title}</p>
+            <h2 className='text-[1.25rem] capitalize font-medium lora-font text-sectionTitleColor'>{title}</h2>
         </div>
     )
 }

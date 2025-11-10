@@ -71,19 +71,19 @@ const Footer = () => {
                         Terms & Conditions
                     </Link>
                     <Link
-                        href='terms-conditions'
+                        href='privacy-policy'
                         className='italic font-extralight text-sm text-[#999999] tracking-[-0.0262rem] capitalize'
                     >
                         privacy policy
                     </Link>
                     <Link
-                        href='terms-conditions'
+                        href='security'
                         className='italic font-extralight text-sm text-[#999999] tracking-[-0.0262rem] capitalize'
                     >
                         security
                     </Link>
                     <Link
-                        href='terms-conditions'
+                        href='cookie-consent'
                         className='italic font-extralight text-sm text-[#999999] tracking-[-0.0262rem] capitalize'
                     >
                         cookie consent
