@@ -16,7 +16,7 @@ interface AuthorInfo {
 
 const InfoTile: React.FC<InfoTileProps> = ({ title, imgUrl, previewContent, alt, authorInfo }) => {
     return (
-        <div className='flex flex-col rounded-xl shadow-[0_0_32px_0_rgba(0,0,0,0.07)] bg-white'>
+        <div className='flex flex-col rounded-xl shadow-[0_0_32px_0_rgba(0,0,0,0.07)] bg-white md:w-90'>
             <Image
                 alt={alt}
                 width={360}
@@ -32,13 +32,14 @@ const InfoTile: React.FC<InfoTileProps> = ({ title, imgUrl, previewContent, alt,
 
             {
                 authorInfo && (
-                    <div className='flex px-4 py-3.25 justify-between w-full h-18'>
+                    <div className='flex px-4 py-3.25 justify-between h-18 items-center mb-2.5 bg-authorSectionColor mx-3 rounded-xl'>
                         <div className='flex gap-x-2.5'>
                             <Image
                                 width={44}
                                 height={44}
                                 alt='author profile image'
                                 src={authorInfo.profileImg}
+                                className='rounded-xl'
                             />
                             <div className='flex flex-col gap-y-1'>
                                 <p className='text-sectionTitleColor font-medium leading-5 capitalize text-[.8125rem] lora-font'>{authorInfo.name}</p>

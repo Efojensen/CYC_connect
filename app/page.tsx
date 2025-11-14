@@ -1,8 +1,8 @@
-import InfoTile from "@components/InfoTile";
-import Image from "@node_modules/next/image";
-import SectionTitle from "@components/SectionTitle";
-import FirstImage from "@components/FirstImage/FirstImage";
-import { events, formations, stories } from "@constants/prime";
+import Image from 'next/image';
+import InfoTile from '@components/InfoTile';
+import SectionTitle from '@components/SectionTitle';
+import FirstImage from '@components/FirstImage/FirstImage';
+import { events, formations, stories } from '@constants/prime';
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
         date={new Date}
       />
 
-      <section>
+      <section className='flex flex-col w-full'>
         <SectionTitle title='Reflections'/>
         <div className='flex gap-6'>
           {
@@ -33,7 +33,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='my-38'>
+      <section className='flex flex-col w-full my-38'>
         <SectionTitle title='Formations'/>
         <div className='flex gap-6'>
           {
@@ -58,11 +58,18 @@ export default function Home() {
           alt='random cute images'
           className='absolute top-0 z-0 right-0 pointer-events-none hidden md:flex'
         />
+        <Image
+          width={280}
+          height={220}
+          src='/svgs/rands_2.svg'
+          alt='random cute images again'
+          className='absolute bottom-0 z-0 left-0 pointer-events-none hidden md:flex'
+        />
         <SectionTitle
           title='Stories'
           className='relative z-10'
         />
-        <div className='flex gap-x-6'>
+        <div className='flex gap-x-6 z-1'>
           {
             stories.map((story, index) => (
               <InfoTile
@@ -72,6 +79,23 @@ export default function Home() {
                 imgUrl={story.imgUrl}
                 authorInfo={story.authorInfo}
                 previewContent={story.previewContent}
+              />
+            ))
+          }
+        </div>
+      </section>
+
+      <section className='flex flex-col w-full my-17.5'>
+        <SectionTitle title='Creative Space'/>
+        <div className='flex gap-6'>
+          {
+            formations.map((formation, index) => (
+              <InfoTile
+                key={index}
+                alt={formation.alt}
+                title={formation.title}
+                imgUrl={formation.imgUrl}
+                previewContent={formation.previewContent}
               />
             ))
           }

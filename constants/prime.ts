@@ -58,45 +58,45 @@ export const stories: InfoTileProps[] = [
     {
         alt: "Saint Therese of Lisieux holding roses",
         title: "The Little Way of St. Therese",
-        imgUrl: "/images/profile_images/1st.jpeg",
+        imgUrl: "/images/9.png",
         previewContent: "Discover the profound spirituality of 'The Little Way' - how small acts of love and sacrifice can lead to great holiness...",
         authorInfo: {
             date: new Date("2024-01-15"),
             name: "Fr. Michael O'Connor",
-            profileImg: "/profiles/fr-michael.jpg"
+            profileImg: "/images/profile_images/1st.jpeg"
         }
     },
     {
         alt: "Ancient Catholic manuscript",
         title: "Understanding Vatican II",
-        imgUrl: "/images/profile_images/2nd.jpeg",
+        imgUrl: "/images/10.png",
         previewContent: "A comprehensive look at the Second Vatican Council and its lasting impact on the modern Catholic Church...",
         authorInfo: {
             date: new Date("2024-01-10"),
             name: "Dr. Maria Gonzalez",
-            profileImg: "/profiles/dr-gonzalez.jpg"
+            profileImg: "/images/profile_images/2nd.jpeg"
         }
     },
     {
         alt: "St. Francis of Assisi with animals",
         title: "Franciscan Spirituality Today",
-        imgUrl: "/images/profile_images/3rd.jpeg",
+        imgUrl: "/images/11.png",
         previewContent: "How the teachings of St. Francis of Assisi remain relevant in our modern world and ecological challenges...",
         authorInfo: {
             date: new Date("2024-01-08"),
             name: "Br. Thomas Aquinas",
-            profileImg: "/profiles/br-thomas.jpg"
+            profileImg: "/images/profile_images/3rd.jpeg"
         }
     },
     {
         alt: "Pope John Paul II with youth",
         title: "JPII and the New Evangelization",
-        imgUrl: "/images/profile_images/4th.jpeg",
+        imgUrl: "/images/12.png",
         previewContent: "How Pope John Paul II's teachings continue to inspire young Catholics in the 21st century...",
         authorInfo: {
             date: new Date("2024-01-05"),
             name: "Sr. Maria Faustina",
-            profileImg: "/profiles/sr-faustina.jpg"
+            profileImg: "/images/profile_images/4th.jpeg"
         }
     },
     // {

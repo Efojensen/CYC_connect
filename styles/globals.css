@@ -20,6 +20,7 @@
     --color-footerTextColor: #8C94A3;
     --color-sectionTitleColor: #3E3232;
     --color-mainNavTileActive: #FEDA00;
+    --color-authorSectionColor: #F5F5F5;
     --color-searchFieldTextColor: #ABABAB;
     --color-searchFieldBackground: #F7F7F7;
     --color-footerBackgroundColor: #0D2E40;
@@ -80,4 +81,8 @@ body {
 
 .footer {
     @apply flex flex-col pl-22.25 pr-26 pt-13.75 bg-footerBackgroundColor pb-11.5 mt-10
+}
+
+.creativeCard {
+    @apply flex flex-col p-2.5 bg-white shadow-[0_0_32px_0_rgba(0,0,0,0.07)] rounded-xl
 }
