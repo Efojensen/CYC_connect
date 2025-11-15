@@ -2,7 +2,8 @@ import Image from 'next/image';
 import InfoTile from '@components/InfoTile';
 import SectionTitle from '@components/SectionTitle';
 import FirstImage from '@components/FirstImage/FirstImage';
-import { events, formations, stories } from '@constants/prime';
+import { creativeCardsInfo, events, formations, stories } from '@constants/prime';
+import CreativeCard from '@components/CreativeCard';
 
 export default function Home() {
   return (
@@ -89,13 +90,14 @@ export default function Home() {
         <SectionTitle title='Creative Space'/>
         <div className='flex gap-6'>
           {
-            formations.map((formation, index) => (
-              <InfoTile
+            creativeCardsInfo.map((creativeCardInfo, index) => (
+              <CreativeCard
                 key={index}
-                alt={formation.alt}
-                title={formation.title}
-                imgUrl={formation.imgUrl}
-                previewContent={formation.previewContent}
+                src={creativeCardInfo.src}
+                alt={creativeCardInfo.alt}
+                likes={creativeCardInfo.likes}
+                title={creativeCardInfo.title}
+                views={creativeCardInfo.views}
               />
             ))
           }

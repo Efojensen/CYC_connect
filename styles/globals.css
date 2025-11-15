@@ -67,6 +67,11 @@ body {
     font-family: var(--font-poppins)
 }
 
+.roboto-font {
+    font-family: var(--font-roboto)
+}
+
+
 .navBar {
     @apply flex w-full py-2.25 pl-20.5 pr-10.5 justify-around items-center
 }

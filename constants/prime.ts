@@ -1,3 +1,4 @@
+import { CreativeCardProps } from "@components/CreativeCard";
 import { InfoTileProps } from "@components/InfoTile"
 
 export const events: InfoTileProps[] = [
@@ -156,5 +157,43 @@ export const stories: InfoTileProps[] = [
     //         name: "Fr. Dominic White",
     //         profileImg: "/profiles/fr-dominic.jpg"
     //     }
+    // }
+];
+
+export const creativeCardsInfo: CreativeCardProps[] = [
+    {
+        src: "/images/creativeCard/creative_1.png",
+        alt: "Abstract geometric art with vibrant colors",
+        title: "Geometric Harmony",
+        views: 1247,
+        likes: 892
+    },
+    {
+        src: "/images/creativeCard/creative_2.png",
+        alt: "Digital landscape with surreal elements",
+        title: "Dreamscape Realms",
+        views: 183,
+        likes: 70
+    },
+    {
+        src: "/images/creativeCard/creative_3.png",
+        alt: "Minimalist character design illustration",
+        title: "Character Studies",
+        views: 1201,
+        likes: 911
+    },
+    {
+        src: "/images/creativeCard/creative_4.png",
+        alt: "Typography and graphic design fusion",
+        title: "Type Fusion",
+        views: 90,
+        likes: 23
+    },
+    // {
+    //     src: "/images/creativeCard/creative_5.png",
+    //     alt: "3D architectural visualization",
+    //     title: "Urban Dreams",
+    //     views: 21345,
+    //     likes: 1567
     // }
 ];
