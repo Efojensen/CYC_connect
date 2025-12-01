@@ -18,7 +18,7 @@ export default function Home() {
       />
 
       <section className='flex flex-col w-full'>
-        <SectionTitle title='Reflections'/>
+        <SectionTitle title='Events'/>
         <div className='flex gap-6'>
           {
             events.map((event, index) => (

@@ -4,12 +4,12 @@ export const socialLinks = [
     {
         src: '/svgs/footer/facebook.svg',
         alt: 'Ghana cyc connect facebook link',
-        href: ''
+        href: 'https://www.facebook.com/share/1VxjH7M1XK/?mibextid=wwXIfr'
     },
     {
         src: '/svgs/footer/instagram.svg',
         alt: 'Ghana cyc connect instagram link',
-        href: ''
+        href: 'https://www.instagram.com/ghancyc?igsh=MmFsZGQ5NzI4dDRn&utm_source=qr'
     },
     {
         src: '/svgs/footer/linkedin.svg',

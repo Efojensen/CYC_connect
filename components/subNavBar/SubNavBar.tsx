@@ -6,25 +6,51 @@ const SubNavBar = () => {
         <aside className='subNavBar'>
             <div className='flex gap-8'>
                 <SubNavBarTile
-                    label='Reflections'
+                    label='Events'
+                    items={[
+                        'Upcoming Programs',
+                        'National Calender',
+                        'Diocesan calls for participation',
+                        'Volunteer and Service opportunities'
+                    ]}
+                    links={[
+                        '/events',
+                        '/events/calender',
+                        '/events/diocesan-calls',
+                        '/events/volunteer'
+                    ]}
                 />
                 <SubNavBarTile
                     label='Stories'
-                />
-                <SubNavBarTile
-                    label='Formation'
+                    items={[
+                        'Youth in Action',
+                        'Faith journeys',
+                        'Diocesan Highlights'
+                    ]}
+                    links={[
+
+                    ]}
                 />
                 <SubNavBarTile
                     label='Creative Space'
-                />
-                <SubNavBarTile
-                    label='Education'
+                    items={[
+                        'Faith based art',
+                        'Ancient art',
+                    ]}
+                    links={[
+
+                    ]}
                 />
                 <SubNavBarTile
                     label='Newsletter'
-                />
-                <SubNavBarTile
-                    label='Events'
+                    items={[
+                        'Youth Events Report',
+                        'Letters from Ghanaian youth diaspora',
+                        'Appointments, memorials and dedications'
+                    ]}
+                    links={[
+
+                    ]}
                 />
             </div>
 

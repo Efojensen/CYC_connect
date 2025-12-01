@@ -9,6 +9,8 @@ export interface CreativeCardProps {
 }
 
 const CreativeCard: React.FC<CreativeCardProps> = ({ src, alt, title, views, likes }) => {
+    const displayedNumber = (num: number) => (num/1000).toFixed(1)
+
     return (
         <div className='creativeCard'>
             <Image
@@ -32,8 +34,8 @@ const CreativeCard: React.FC<CreativeCardProps> = ({ src, alt, title, views, lik
                             src='/svgs/creativeCard/views.svg'
                             className='hover:cursor-pointer'
                         />
-                        <p className='roboto-font font-medium leading-5.5 tracking-[.0063rem]'>{
-                            views >= 1000 ? `${views / 1000}k` : `${views}`
+                        <p className='roboto-font font-medium leading-5.5 tracking-[.0063rem] mr-4'>{
+                            views >= 1000 ? `${displayedNumber(views)}k` : `${views}`
                         }</p>
 
                         <Image

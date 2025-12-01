@@ -8,11 +8,12 @@ interface FirstImageProps {
     month: string
     title: string
     author: string
+    w_screen?: boolean
 }
 
-const FirstImage: React.FC<FirstImageProps> = ({ date, image, month, title, author }) => {
+const FirstImage: React.FC<FirstImageProps> = ({ date, image, month, title, author, w_screen }) => {
     return (
-        <div className='flex flex-col relative items-center mb-17.5'>
+        <div className={`flex flex-col relative items-center mb-17.5 ${w_screen && 'w-screen'}`}>
             {/* Image Container */}
             <div className='relative w-full'>
                 <Image
