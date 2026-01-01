@@ -6,18 +6,9 @@ const SubNavBar = () => {
         <aside className='subNavBar'>
             <div className='flex gap-8'>
                 <SubNavBarTile
-                    label='Events'
-                    items={[
-                        'Upcoming Programs',
-                        'National Calender',
-                        'Diocesan calls for participation',
-                        'Volunteer and Service opportunities'
-                    ]}
+                    label='Reflections'
                     links={[
-                        '/events',
-                        '/events/calender',
-                        '/events/diocesan-calls',
-                        '/events/volunteer'
+
                     ]}
                 />
                 <SubNavBarTile
@@ -27,6 +18,12 @@ const SubNavBar = () => {
                         'Faith journeys',
                         'Diocesan Highlights'
                     ]}
+                    links={[
+
+                    ]}
+                />
+                <SubNavBarTile
+                    label='Formation'
                     links={[
 
                     ]}
@@ -42,6 +39,17 @@ const SubNavBar = () => {
                     ]}
                 />
                 <SubNavBarTile
+                    label='Education'
+                    items={[
+                        'Leadership tips',
+                        'Career guidance',
+                        'Academic resources'
+                    ]}
+                    links={[
+
+                    ]}
+                    />
+                <SubNavBarTile
                     label='Newsletter'
                     items={[
                         'Youth Events Report',
@@ -50,6 +58,21 @@ const SubNavBar = () => {
                     ]}
                     links={[
 
+                    ]}
+                />
+                <SubNavBarTile
+                    label='Events'
+                    items={[
+                        'Upcoming Programs',
+                        'National Calender',
+                        'Diocesan calls for participation',
+                        'Volunteer and Service opportunities'
+                    ]}
+                    links={[
+                        '/events',
+                        '/events/calender',
+                        '/events/diocesan-calls',
+                        '/events/volunteer'
                     ]}
                 />
             </div>

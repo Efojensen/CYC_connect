@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import InfoTile from '@components/InfoTile';
 import SectionTitle from '@components/SectionTitle';
+import CreativeCard from '@components/CreativeCard';
 import FirstImage from '@components/FirstImage/FirstImage';
 import { creativeCardsInfo, events, formations, stories } from '@constants/prime';
-import CreativeCard from '@components/CreativeCard';
 
 export default function Home() {
   return (
@@ -18,12 +18,13 @@ export default function Home() {
       />
 
       <section className='flex flex-col w-full'>
-        <SectionTitle title='Events'/>
+        <SectionTitle title='Events' />
         <div className='flex gap-6'>
           {
             events.map((event, index) => (
               <InfoTile
                 key={index}
+                id={event.id}
                 alt={event.alt}
                 title={event.title}
                 imgUrl={event.imgUrl}
@@ -35,12 +36,13 @@ export default function Home() {
       </section>
 
       <section className='flex flex-col w-full my-38'>
-        <SectionTitle title='Formations'/>
+        <SectionTitle title='Formations' />
         <div className='flex gap-6'>
           {
             formations.map((formation, index) => (
               <InfoTile
                 key={index}
+                id={formation.id}
                 alt={formation.alt}
                 title={formation.title}
                 imgUrl={formation.imgUrl}
@@ -75,6 +77,7 @@ export default function Home() {
             stories.map((story, index) => (
               <InfoTile
                 key={index}
+                id={story.id}
                 alt={story.alt}
                 title={story.title}
                 imgUrl={story.imgUrl}
@@ -87,7 +90,7 @@ export default function Home() {
       </section>
 
       <section className='flex flex-col w-full my-17.5'>
-        <SectionTitle title='Creative Space'/>
+        <SectionTitle title='Creative Space' />
         <div className='flex gap-6'>
           {
             creativeCardsInfo.map((creativeCardInfo, index) => (

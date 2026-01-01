@@ -3,24 +3,28 @@ import { InfoTileProps } from "@components/InfoTile"
 
 export const events: InfoTileProps[] = [
     {
+        id: '1',
         title: 'Easter Sunday Celebration',
         alt: 'Easter Mass with beautiful floral arrangements and congregation',
         imgUrl: '/images/1.png',
         previewContent: 'Join us for our joyful Easter Sunday Mass celebrating the resurrection of Jesus Christ with special music, flowers, and fellowship.'
     },
     {
+        id: '1',
         title: 'Christmas Midnight Mass',
         alt: 'Christmas Eve service with candlelight and nativity scene',
         imgUrl: '/images/2.png',
         previewContent: 'Experience the beauty of Christmas with our traditional Midnight Mass featuring choir performances and the blessing of the nativity.'
     },
     {
+        id: '1',
         title: 'First Communion Ceremony',
         alt: 'Children receiving First Holy Communion in white dresses and suits',
         imgUrl: '/images/3.png',
         previewContent: 'Witness our young parishioners receive the Sacrament of First Holy Communion in this special ceremony filled with faith and tradition.'
     },
     {
+        id: '1',
         title: 'Lenten Retreat',
         alt: 'Prayer gathering during Lenten season with cross and candles',
         imgUrl: '/images/4.png',
@@ -30,24 +34,28 @@ export const events: InfoTileProps[] = [
 
 export const formations: InfoTileProps[] = [
     {
+        id: "2",
         title: 'RCIA Program',
         alt: 'Group of adults participating in RCIA classes',
         imgUrl: '/images/5.jpg',
         previewContent: 'Join our Rite of Christian Initiation for Adults to learn about Catholic faith and prepare for sacraments of initiation.'
     },
     {
+        id: "2",
         title: 'Bible Study Series',
         alt: 'Small group studying the Bible together',
         imgUrl: '/images/6.jpg',
         previewContent: 'Deepen your understanding of Scripture through our weekly Bible study exploring the Gospels and Church teachings.'
     },
     {
+        id: "2",
         title: 'Marriage Preparation',
         alt: 'Engaged couple meeting with priest for marriage preparation',
         imgUrl: '/images/7.jpg',
         previewContent: 'Prepare for the sacrament of Matrimony with our comprehensive marriage preparation program and FOCCUS inventory.'
     },
     {
+        id: "2",
         title: 'Youth Catechism',
         alt: 'Teenagers learning catechism in classroom setting',
         imgUrl: '/images/8.jpg',
@@ -57,6 +65,7 @@ export const formations: InfoTileProps[] = [
 
 export const stories: InfoTileProps[] = [
     {
+        id: '3',
         alt: "Saint Therese of Lisieux holding roses",
         title: "The Little Way of St. Therese",
         imgUrl: "/images/9.png",
@@ -68,6 +77,7 @@ export const stories: InfoTileProps[] = [
         }
     },
     {
+        id: '3',
         alt: "Ancient Catholic manuscript",
         title: "Understanding Vatican II",
         imgUrl: "/images/10.png",
@@ -79,6 +89,7 @@ export const stories: InfoTileProps[] = [
         }
     },
     {
+        id: '3',
         alt: "St. Francis of Assisi with animals",
         title: "Franciscan Spirituality Today",
         imgUrl: "/images/11.png",
@@ -90,6 +101,7 @@ export const stories: InfoTileProps[] = [
         }
     },
     {
+        id: '3',
         alt: "Pope John Paul II with youth",
         title: "JPII and the New Evangelization",
         imgUrl: "/images/12.png",

@@ -1,6 +1,8 @@
+import Link from '@node_modules/next/link'
 import Image from 'next/image'
 
 export interface InfoTileProps {
+    id: string
     alt: string
     title: string
     imgUrl: string
@@ -14,9 +16,12 @@ interface AuthorInfo {
     profileImg: string
 }
 
-const InfoTile: React.FC<InfoTileProps> = ({ title, imgUrl, previewContent, alt, authorInfo }) => {
+const InfoTile: React.FC<InfoTileProps> = ({ title, imgUrl, previewContent, alt, authorInfo, id }) => {
     return (
-        <div className='flex flex-col rounded-xl shadow-[0_0_32px_0_rgba(0,0,0,0.07)] bg-white md:w-90'>
+        <Link
+            href={`/events/${id}`}
+            className='flex flex-col rounded-xl shadow-[0_0_32px_0_rgba(0,0,0,0.07)] bg-white md:w-90'
+        >
             <Image
                 alt={alt}
                 width={360}
@@ -63,7 +68,7 @@ const InfoTile: React.FC<InfoTileProps> = ({ title, imgUrl, previewContent, alt,
                     </div>
                 )
             }
-        </div>
+        </Link>
     )
 }
 
