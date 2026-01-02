@@ -19,7 +19,12 @@ interface AuthorInfo {
 const InfoTile: React.FC<InfoTileProps> = ({ title, imgUrl, previewContent, alt, authorInfo, id }) => {
     return (
         <Link
-            href={`/events/${id}`}
+            href={{
+                pathname: `/events/${id}`,
+                query: {
+                    url: imgUrl
+                }
+            }}
             className='flex flex-col rounded-xl shadow-[0_0_32px_0_rgba(0,0,0,0.07)] bg-white md:w-90'
         >
             <Image

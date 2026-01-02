@@ -209,3 +209,11 @@ export const creativeCardsInfo: CreativeCardProps[] = [
     //     likes: 1567
     // }
 ];
+
+export const desc = `Lorem ipsum dolor sit amet consectetur. Curabitur nec eget vel ullamcorper nec et lorem. Fermentum sed velit rhoncus faucibus sem ullamcorper molestie duis sit. Et in lorem lorem pretium ut eget consequat euismod. Aenean egestas sed gravida sed.
+Augue sapien odio in pellentesque maecenas suspendisse facilisis. Neque sed vulputate augue integer vulputate ullamcorper lorem rhoncus. Cursus nisi purus tellus etiam faucibus in leo blandit at. Sed pretium facilisis mauris pulvinar ac.`
+
+export const superLongText = `Lorem ipsum dolor sit amet consectetur. Curabitur nec eget vel ullamcorper nec et lorem. Fermentum sed velit rhoncus faucibus sem ullamcorper molestie duis sit. Et in lorem lorem pretium ut eget consequat euismod. Aenean egestas sed gravida sed.
+Augue sapien odio in pellentesque maecenas suspendisse facilisis. Neque sed vulputate augue integer vulputate ullamcorper lorem rhoncus. Cursus nisi purus tellus etiam faucibus in leo blandit at. Sed pretium facilisis mauris pulvinar ac.
+Lorem ipsum dolor sit amet consectetur. Curabitur nec eget vel ullamcorper nec et lorem. Fermentum sed velit rhoncus faucibus sem ullamcorper molestie duis sit. Et in lorem lorem pretium ut eget consequat euismod. Aenean egestas sed gravida sed.
+Augue sapien odio in pellentesque maecenas suspendisse facilisis. Neque sed vulputate augue integer vulputate ullamcorper lorem rhoncus. Cursus nisi purus tellus etiam faucibus in leo blandit at. Sed pretium facilisis mauris pulvinar ac.`
