@@ -1,5 +1,6 @@
 import { CreativeCardProps } from "@components/CreativeCard";
 import { InfoTileProps } from "@components/InfoTile"
+import { SpeakerTileProps } from "@components/SpeakerTile";
 
 export const events: InfoTileProps[] = [
     {
@@ -217,3 +218,27 @@ export const superLongText = `Lorem ipsum dolor sit amet consectetur. Curabitur 
 Augue sapien odio in pellentesque maecenas suspendisse facilisis. Neque sed vulputate augue integer vulputate ullamcorper lorem rhoncus. Cursus nisi purus tellus etiam faucibus in leo blandit at. Sed pretium facilisis mauris pulvinar ac.
 Lorem ipsum dolor sit amet consectetur. Curabitur nec eget vel ullamcorper nec et lorem. Fermentum sed velit rhoncus faucibus sem ullamcorper molestie duis sit. Et in lorem lorem pretium ut eget consequat euismod. Aenean egestas sed gravida sed.
 Augue sapien odio in pellentesque maecenas suspendisse facilisis. Neque sed vulputate augue integer vulputate ullamcorper lorem rhoncus. Cursus nisi purus tellus etiam faucibus in leo blandit at. Sed pretium facilisis mauris pulvinar ac.`
+
+export const speakers: SpeakerTileProps[] = [
+    {
+        "name": "Alice Johnson",
+        "number": "+1-555-123-4567",
+        "imgUrl": "/images/speakers/1.png",
+        "mail": "alice.johnson@example.com",
+        "about": "Frontend developer with a passion for accessible web design.",
+    },
+    {
+        "name": "Brian Smith",
+        "number": "+1-555-987-6543",
+        "mail": "brian.smith@example.com",
+        "imgUrl": "/images/speakers/2.png",
+        "about": "Cloud engineer specializing in scalable backend systems.",
+    },
+    {
+        "name": "Clara Lee",
+        "number": "+1-555-456-7890",
+        "mail": "clara.lee@example.com",
+        "imgUrl": "/images/speakers/3.png",
+        "about": "UX designer focused on user-centered product experiences.",
+    }
+]
