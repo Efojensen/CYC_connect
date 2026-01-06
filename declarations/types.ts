@@ -7,9 +7,10 @@ export interface CreativeCardProps {
 }
 
 export interface EventDetailsTileProps {
-    date: string
+    date: Date
     time: string
     location: string
+    title?: string
     speaker?: string
 }
 

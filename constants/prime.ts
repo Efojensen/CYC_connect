@@ -1,4 +1,4 @@
-import type { CreativeCardProps, InfoTileProps, SpeakerTileProps } from "@declarations/types";
+import type { CreativeCardProps, EventDetailsTileProps, InfoTileProps, SpeakerTileProps } from "@declarations/types";
 
 export const events: InfoTileProps[] = [
     {
@@ -111,64 +111,6 @@ export const stories: InfoTileProps[] = [
             profileImg: "/images/profile_images/4th.jpeg"
         }
     },
-    // {
-    //     alt: "Monks chanting divine office",
-    //     title: "The Beauty of Liturgical Prayer",
-    //     imgUrl: "/images/liturgical-prayer.jpg",
-    //     previewContent: "Discover the ancient rhythms of the Liturgy of the Hours and how to incorporate them into daily life...",
-    //     authorInfo: {
-    //         date: new Date("2024-01-03"),
-    //         name: "Abbot Benedict Wells",
-    //         profileImg: "/profiles/abbot-benedict.jpg"
-    //     }
-    // },
-    // {
-    //     alt: "Catholic family at Mass",
-    //     title: "Raising Catholic Children",
-    //     imgUrl: "/images/catholic-family.jpg",
-    //     previewContent: "Practical advice for nurturing faith and passing on Catholic traditions to the next generation...",
-    //     // authorInfo omitted
-    // },
-    // {
-    //     alt: "St. Augustine writing",
-    //     title: "Augustine's Confessions",
-    //     imgUrl: "/images/st-augustine.jpg",
-    //     previewContent: "Timeless wisdom from St. Augustine's spiritual autobiography that still speaks to seekers today...",
-    //     authorInfo: {
-    //         date: new Date("2024-01-01"),
-    //         name: "Dr. Catherine of Siena",
-    //         profileImg: "/profiles/dr-catherine.jpg"
-    //     }
-    // },
-    // {
-    //     alt: "Eucharistic host and chalice",
-    //     title: "The Mystery of the Eucharist",
-    //     imgUrl: "/images/eucharist.jpg",
-    //     previewContent: "A theological and spiritual exploration of the source and summit of the Christian life...",
-    //     authorInfo: {
-    //         date: new Date("2023-12-28"),
-    //         name: "Bishop Robert Barron",
-    //         profileImg: "/profiles/bishop-barron.jpg"
-    //     }
-    // },
-    // {
-    //     alt: "Our Lady of Guadalupe image",
-    //     title: "Marian Apparitions",
-    //     imgUrl: "/images/guadalupe.jpg",
-    //     previewContent: "Examining the Church's approach to Marian apparitions and their significance for the faithful...",
-    //     // authorInfo omitted
-    // },
-    // {
-    //     alt: "St. Thomas Aquinas teaching",
-    //     title: "Aquinas for Beginners",
-    //     imgUrl: "/images/aquinas.jpg",
-    //     previewContent: "Making the complex theology of St. Thomas Aquinas accessible to modern readers...",
-    //     authorInfo: {
-    //         date: new Date("2023-12-25"),
-    //         name: "Fr. Dominic White",
-    //         profileImg: "/profiles/fr-dominic.jpg"
-    //     }
-    // }
 ];
 
 export const creativeCardsInfo: CreativeCardProps[] = [
@@ -200,13 +142,6 @@ export const creativeCardsInfo: CreativeCardProps[] = [
         views: 90,
         likes: 23
     },
-    // {
-    //     src: "/images/creativeCard/creative_5.png",
-    //     alt: "3D architectural visualization",
-    //     title: "Urban Dreams",
-    //     views: 21345,
-    //     likes: 1567
-    // }
 ];
 
 export const desc = `Lorem ipsum dolor sit amet consectetur. Curabitur nec eget vel ullamcorper nec et lorem. Fermentum sed velit rhoncus faucibus sem ullamcorper molestie duis sit. Et in lorem lorem pretium ut eget consequat euismod. Aenean egestas sed gravida sed.
@@ -240,3 +175,28 @@ export const speakers: SpeakerTileProps[] = [
         "about": "UX designer focused on user-centered product experiences.",
     }
 ]
+
+export const mockEvents: EventDetailsTileProps[] = [
+    {
+        date: new Date("2026-11-15"),
+        time: "10:30 AM",
+        location: "Main Auditorium",
+        title: "Introduction to TypeScript",
+        speaker: "Alex Johnson",
+    },
+    {
+        date: new Date("2026-10-16"),
+        time: "2:00 PM",
+        location: "Room 204",
+        title: "Modern Frontend with React",
+        speaker: "Jamie Lee",
+    },
+    {
+        date: new Date("2026-09-15"),
+        time: "10:30 AM",
+        location: "Main Auditorium",
+        title: "Introduction to TypeScript",
+        speaker: "Alex Johnson",
+    }
+];
+

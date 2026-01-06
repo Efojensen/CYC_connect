@@ -1,8 +1,9 @@
-import EventDetailsTile from "@components/EventDetailsTile"
-import EventFirstImage from "@components/FirstImage/EventFirstImage"
-import SectionTitle from "@components/SectionTitle"
 import SpeakerTile from "@components/SpeakerTile"
-import { desc, speakers, superLongText } from "@constants/prime"
+import SectionTitle from "@components/SectionTitle"
+import EventDetailsTile from "@components/EventDetailsTile"
+import OtherEventTile from "@components/otherEvent/OtherEventTile"
+import EventFirstImage from "@components/FirstImage/EventFirstImage"
+import { desc, mockEvents, speakers, superLongText } from "@constants/prime"
 
 const EventDetailsPage = () => {
     return (
@@ -17,12 +18,12 @@ const EventDetailsPage = () => {
                 <p className='inter-font text-[1rem] md:text-2xl leading-7 md:leading-8 text-black mb-12.5 md:w-[57%]'>{superLongText}</p>
                 <EventDetailsTile
                     time='9am - 3pm'
-                    date='November 7th 2025'
+                    date={new Date()}
                     location='Cape Coast, Ridge Royal Hotel'
                     speaker='Fr. Evans Halolo'
                 />
             </div>
-            <div className='flex flex-col md:flex-row'>
+            <div className='flex flex-col md:flex-row justify-between'>
                 {/* Speakers section */}
                 <section>
                     <h3 className='text-tertiaryNavBarBackground text-4xl lora-font uppercase text-center md:text-start mb-8.75'>speakers</h3>
@@ -42,6 +43,18 @@ const EventDetailsPage = () => {
                 {/* Other Events section */}
                 <section className='flex flex-col'>
                     <SectionTitle title='Other Events'/>
+                    <div className='flex flex-col gap-10 md:gap-20'>
+                        {mockEvents.map((other, index) => (
+                            <OtherEventTile
+                                key={index}
+                                date={other.date}
+                                time={other.time}
+                                title={other.title}
+                                speaker={other.speaker}
+                                location={other.location}
+                            />
+                        ))}
+                    </div>
                 </section>
             </div>
         </main>

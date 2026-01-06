@@ -14,7 +14,7 @@ const EventDetailsTile: React.FC<EventDetailsTileProps> = ({ date, time, locatio
                         alt='calender'
                         src='/svgs/eventDetails/calender.svg'
                     />
-                    <p className='lora-font text-[.8125rem] font-medium capitalize leading-5 ml-2 text-white'>{date}</p>
+                    <p className='lora-font text-[.8125rem] font-medium capitalize leading-5 ml-2 text-white'>{date.toLocaleDateString()}</p>
                 </div>
                 <div className='flex items-center'>
                     <Image
