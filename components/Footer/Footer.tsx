@@ -9,9 +9,8 @@ import { pageLinks_1, pageLinks_2, pageLinks_3, socialLinks } from "./constants"
 const Footer = () => {
     return (
         <footer className='footer'>
-
-            <div className='flex justify-between'>
-                <div className='flex flex-col w-106 items-start'>
+            <div className='flex flex-col md:flex-row justify-between'>
+                <div className='flex flex-col w-full md:w-106 md:items-start items-center'>
                     <Image
                         width={100}
                         height={100}
@@ -34,7 +33,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className='flex mt-23.5 gap-6'>
+                <div className='flex flex-col md:flex-row mt-23.5 gap-8.75 md:gap-6 items-center md:items-start'>
                     <LinkBlock
                         title='ghana cyc'
                         links={pageLinks_1}
@@ -61,9 +60,9 @@ const Footer = () => {
 
             <hr className='w-full mt-20.5 h-[.0313rem] text-[#999999]'/>
 
-            <div className='flex mt-4 ml-8.25'>
-                <p className='text-sm tracking-[-0.0262rem] inter-font text-white mr-36.25'>2025 © Company Ltd. All rights reserved.</p>
-                <div className='flex gap-12.5'>
+            <div className='flex flex-col md:flex-row mt-4 ml-8.25 items-center'>
+                <p className='text-sm tracking-[-0.0262rem] inter-font text-white md:mr-36.25 text-center md:text-start mb-3 md:mb-0'>2025 © Company Ltd. All rights reserved.</p>
+                <div className='flex flex-col md:flex-row gap-3 md:gap-12.5'>
                     <Link
                         href='terms-conditions'
                         className='italic font-extralight text-sm text-[#999999] tracking-[-0.0262rem] capitalize'

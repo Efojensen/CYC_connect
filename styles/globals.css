@@ -85,7 +85,7 @@ body {
 }
 
 .footer {
-    @apply flex flex-col pl-22.25 pr-26 pt-13.75 bg-footerBackgroundColor pb-11.5 mt-10
+    @apply flex flex-col md:pl-22.25 md:pr-26 md:pt-13.75 md:pb-11.5 bg-footerBackgroundColor mt-10 pr-9 pl-9 w-full pb-10 pt-10
 }
 
 .creativeCard {
