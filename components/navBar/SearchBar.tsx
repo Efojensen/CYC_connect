@@ -7,7 +7,7 @@ const SearchBar = () => {
     const [text, setText] = useState<string>('')
 
     return (
-        <div className='flex p-4 w-127.5 items-center rounded-2xl bg-searchFieldBackground text-searchFieldTextColor justify-between'>
+        <div className='hidden md:flex p-4 w-127.5 items-center rounded-2xl bg-searchFieldBackground text-searchFieldTextColor justify-between'>
             <input
                 value={text}
                 placeholder='search here...'

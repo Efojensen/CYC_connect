@@ -73,11 +73,11 @@ body {
 
 
 .navBar {
-    @apply flex w-full py-2.25 pl-20.5 pr-10.5 justify-around items-center
+    @apply flex w-full py-2.25 md:pl-20.5 md:pr-10.5 justify-between md:justify-around items-center px-4
 }
 
 .subNavBar {
-    @apply flex w-full py-4.75 pl-12.25 pr-10.25 bg-subNavBarTileBackground justify-between
+    @apply hidden md:flex w-full py-4.75 pl-12.25 pr-10.25 bg-subNavBarTileBackground justify-between
 }
 
 .tertiaryNavBar {
