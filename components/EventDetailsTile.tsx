@@ -1,11 +1,5 @@
-import Image from '@node_modules/next/image'
-
-interface EventDetailsTileProps {
-    date: string
-    time: string
-    location: string
-    speaker?: string
-}
+import Image from 'next/image'
+import { EventDetailsTileProps } from '@declarations/types'
 
 const EventDetailsTile: React.FC<EventDetailsTileProps> = ({ date, time, location, speaker }) => {
     return (

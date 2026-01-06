@@ -1,12 +1,5 @@
 import Image from 'next/image'
-
-export interface CreativeCardProps {
-    src: string
-    alt: string
-    title: string
-    views: number
-    likes: number
-}
+import { CreativeCardProps } from '@declarations/types'
 
 const CreativeCard: React.FC<CreativeCardProps> = ({ src, alt, title, views, likes }) => {
     const displayedNumber = (num: number) => (num/1000).toFixed(1)

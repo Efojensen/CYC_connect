@@ -1,4 +1,4 @@
-import { FooterLink } from "./LinkBlock"
+import { FooterLink } from "@declarations/types"
 
 export const socialLinks = [
     {

@@ -1,6 +1,4 @@
-import { CreativeCardProps } from "@components/CreativeCard";
-import { InfoTileProps } from "@components/InfoTile"
-import { SpeakerTileProps } from "@components/SpeakerTile";
+import type { CreativeCardProps, InfoTileProps, SpeakerTileProps } from "@declarations/types";
 
 export const events: InfoTileProps[] = [
     {

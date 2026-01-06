@@ -1,12 +1,5 @@
 import Image from 'next/image'
-
-export interface SpeakerTileProps {
-    name: string
-    mail: string
-    about: string
-    imgUrl: string
-    number: string
-}
+import { SpeakerTileProps } from '@declarations/types'
 
 const SpeakerTile:React.FC<SpeakerTileProps> = ({ name, mail, about, imgUrl, number }) => {
     return (

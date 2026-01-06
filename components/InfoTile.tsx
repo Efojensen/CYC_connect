@@ -1,20 +1,6 @@
-import Link from '@node_modules/next/link'
 import Image from 'next/image'
-
-export interface InfoTileProps {
-    id: string
-    alt: string
-    title: string
-    imgUrl: string
-    previewContent: string
-    authorInfo?: AuthorInfo
-}
-
-interface AuthorInfo {
-    date: Date
-    name: string
-    profileImg: string
-}
+import Link from '@node_modules/next/link'
+import { InfoTileProps } from '@declarations/types'
 
 const InfoTile: React.FC<InfoTileProps> = ({ title, imgUrl, previewContent, alt, authorInfo, id }) => {
     return (

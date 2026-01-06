@@ -1,9 +1,5 @@
 import Link from 'next/link'
-
-export interface FooterLink {
-    href: string
-    text: string
-}
+import { FooterLink } from '@declarations/types'
 
 interface LinkBlockProps {
     title: string
