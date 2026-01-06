@@ -80,10 +80,6 @@ body {
     @apply hidden md:flex w-full py-4.75 pl-12.25 pr-10.25 bg-subNavBarTileBackground justify-between
 }
 
-.tertiaryNavBar {
-    @apply flex w-full py-12 pl-75 bg-tertiaryNavBarBackground
-}
-
 .footer {
     @apply flex flex-col md:pl-22.25 md:pr-26 md:pt-13.75 md:pb-11.5 bg-footerBackgroundColor mt-10 pr-9 pl-9 w-full pb-10 pt-10
 }

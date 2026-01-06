@@ -7,7 +7,7 @@ import { desc, mockEvents, speakers, superLongText } from "@constants/prime"
 
 const EventDetailsPage = () => {
     return (
-        <main className='mt-34.25 px-5 md:px-27'>
+        <main className='mt-11 md:mt-34.25 px-5 md:px-27'>
             <EventFirstImage
                 title='Leadership Summit 2025'
                 imgUrl='/images/cathedral.png'
@@ -25,7 +25,7 @@ const EventDetailsPage = () => {
             </div>
             <div className='flex flex-col md:flex-row justify-between'>
                 {/* Speakers section */}
-                <section>
+                <section className='mt-12.5 md:mt-0'>
                     <h3 className='text-tertiaryNavBarBackground text-4xl lora-font uppercase text-center md:text-start mb-8.75'>speakers</h3>
                     <div className='flex flex-col md:gap-y-23'>
                         {speakers.map((speakers, index) => (
