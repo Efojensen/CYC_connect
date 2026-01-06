@@ -41,7 +41,7 @@ const EventDetailsPage = () => {
                     </div>
                 </section>
                 {/* Other Events section */}
-                <section className='flex flex-col'>
+                <section className='flex flex-col mt-12.5 md:mt-0'>
                     <SectionTitle title='Other Events'/>
                     <div className='flex flex-col gap-10 md:gap-20'>
                         {mockEvents.map((other, index) => (

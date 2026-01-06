@@ -4,7 +4,7 @@ import { EventDetailsTileProps } from "@declarations/types"
 
 const OtherEventTile:React.FC<EventDetailsTileProps> = ({ date, time, location, speaker, title }) => {
     return (
-        <div className='flex flex-col md:flex-row'>
+        <div className='flex flex-col md:flex-row items-center md:items-start'>
             <CircleDate receivedDate={date}/>
             <div className='flex flex-col md:ml-9'>
                 <span className='flex gap-0.75 mb-3 items-center'>
@@ -14,9 +14,9 @@ const OtherEventTile:React.FC<EventDetailsTileProps> = ({ date, time, location, 
                         alt='clock face'
                         src='/svgs/eventDetails/clock_black.svg'
                     />
-                    <span>{time}</span>
+                    <span className='inter-font mt-2 md:mt-0'>{time}</span>
                 </span>
-                <span className='lora-font text-4xl font-medium capitalize line-clamp-1 mb-10.5'>{title}</span>
+                <span className='lora-font text-2xl md:text-4xl font-medium capitalize line-clamp-1 mb-4 md:mb-10.5'>{title}</span>
 
                 <span className='lora-font text-[1.25rem] font-medium leading-5 flex items-center gap-[3px]'>
                     <Image
