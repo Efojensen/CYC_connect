@@ -9,7 +9,7 @@ const MetaTile = ({icon, desc} : {icon: string, desc: string}) => {
                 height={16}
                 width={16.53}
             />
-            <p className='text-[#BACCE1] text-sm font-medium leading-5 text-center inter-font'>{desc}</p>
+            <p className='text-[#BACCE1] text-[.75rem] md:text-sm font-medium leading-5 text-center inter-font'>{desc}</p>
         </div>
     )
 }
