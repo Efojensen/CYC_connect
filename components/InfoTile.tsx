@@ -11,7 +11,7 @@ const InfoTile: React.FC<InfoTileProps> = ({ title, imgUrl, previewContent, alt,
                     url: imgUrl
                 }
             }}
-            className='flex flex-col rounded-xl shadow-[0_0_32px_0_rgba(0,0,0,0.07)] bg-white w-89.5 md:w-90'
+            className='flex flex-col rounded-xl shadow-[0_0_32px_0_rgba(0_0_0_0.07)] bg-white w-89.5 md:w-90'
         >
             <Image
                 alt={alt}

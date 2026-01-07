@@ -28,6 +28,13 @@ export const events: InfoTileProps[] = [
         alt: 'Prayer gathering during Lenten season with cross and candles',
         imgUrl: '/images/4.png',
         previewContent: 'Deepen your spiritual journey this Lent with our annual retreat focusing on prayer, fasting, and alms giving in preparation for Easter.'
+    },
+    {
+        id: '1',
+        title: 'Lenten Retreat',
+        alt: 'Prayer gathering during Lenten season with cross and candles',
+        imgUrl: '/images/4.png',
+        previewContent: 'Deepen your spiritual journey this Lent with our annual retreat focusing on prayer, fasting, and alms giving in preparation for Easter.'
     }
 ]
 
@@ -111,6 +118,18 @@ export const stories: InfoTileProps[] = [
             profileImg: "/images/profile_images/4th.jpeg"
         }
     },
+    {
+        id: '3',
+        alt: "Pope John Paul II with youth",
+        title: "JPII and the New Evangelization",
+        imgUrl: "/images/12.png",
+        previewContent: "How Pope John Paul II's teachings continue to inspire young Catholics in the 21st century...",
+        authorInfo: {
+            date: new Date("2024-01-05"),
+            name: "Sr. Maria Faustina",
+            profileImg: "/images/profile_images/4th.jpeg"
+        }
+    },
 ];
 
 export const creativeCardsInfo: CreativeCardProps[] = [
@@ -134,6 +153,13 @@ export const creativeCardsInfo: CreativeCardProps[] = [
         title: "Character Studies",
         views: 1201,
         likes: 911
+    },
+    {
+        src: "/images/creativeCard/creative_4.png",
+        alt: "Typography and graphic design fusion",
+        title: "Type Fusion",
+        views: 90,
+        likes: 23
     },
     {
         src: "/images/creativeCard/creative_4.png",

@@ -7,7 +7,7 @@ import { creativeCardsInfo, events, formations, stories } from '@constants/prime
 
 export default function Home() {
   return (
-    <main className='flex flex-col mt-17.5 px-5 md:px-27 items-center'>
+    <main className='flex flex-col mt-17.5 px-5 sm:px-13 md:px-27 items-center'>
       {/* The first large image */}
       <FirstImage
         image='/images/coliseum.png'
@@ -17,31 +17,32 @@ export default function Home() {
         date={new Date}
       />
 
-      <section className='flex flex-col w-full'>
-        <SectionTitle title='Events' />
-
-        <div className='flex gap-6 overflow-x-auto md:overflow-x-visible flex-nowrap md:flex-wrap no-scrollbar'>
-          {events.map((event, index) => (
-            <div key={index} className='shrink-0'>
-              <InfoTile {...event} />
-            </div>
-          ))}
+      <section className="flex flex-col w-full">
+        <SectionTitle title="Events" />
+        <div className="relative -mx-5 sm:-mx-13 md:mx-0">
+          <div className="flex gap-6 px-5 sm:px-13 md:px-0 overflow-x-auto flex-nowrap no-scrollbar">
+            {events.map((event, index) => (
+              <div key={index} className="shrink-0">
+                <InfoTile {...event} />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
 
       <section className='flex flex-col w-full my-38'>
         <SectionTitle title='Formations' />
-
-        <div className='flex gap-6 overflow-x-auto md:overflow-x-visible flex-nowrap md:flex-wrap no-scrollbar'>
-          {formations.map((formation, index) => (
-            <div key={index} className='shrink-0'>
-              <InfoTile {...formation} />
-            </div>
-          ))}
+        <div className='relative -mx-5 sm:-mx-13 md:mx-0'>
+          <div className='flex gap-6 px-5 sm:px-13 md:px-0 overflow-x-auto flex-nowrap no-scrollbar'>
+            {formations.map((formation, index) => (
+              <div key={index} className='shrink-0'>
+                <InfoTile {...formation} />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
-
 
       <section className='flex flex-col relative w-screen px-5.75 md:px-27 h-134.75 md:h-166.5 bg-specialBlueColoredSection pt-11.25 md:pt-27.75'>
         <Image
@@ -62,27 +63,30 @@ export default function Home() {
           title='Stories'
           className='relative z-10'
         />
-        <div className='flex gap-x-6 z-1 overflow-x-auto md:overflow-x-visible no-scrollbar'>
-          {stories.map((story, index) => (
-            <div key={index} className='shrink-0'>
-              <InfoTile {...story} />
-            </div>
-          ))}
+        <div className='relative -mx-5 sm:-mx-13 md:mx-0'>
+          <div className='flex gap-x-6 z-1 px-5 sm:px-13 md:px-0 overflow-x-auto flex-nowrap no-scrollbar'>
+            {stories.map((story, index) => (
+              <div key={index} className='shrink-0'>
+                <InfoTile {...story} />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className='flex flex-col w-full my-17.5'>
         <SectionTitle title='Creative Space' />
-        {/* overflow-x-auto md:overflow-x-visible flex-nowrap md:flex-wrap */}
-        <div className='flex gap-6 no-scrollbar overflow-x-auto md:overflow-x-visible'>
-          {creativeCardsInfo.map((creativeCardInfo, index) => (
-            <div key={index}>
-              <CreativeCard {...creativeCardInfo} />
-            </div>
-          ))}
+        <div className='relative -mx-5 sm:-mx-13 md:mx-0'>
+          {/* overflow-x-auto md:overflow-x-visible flex-nowrap md:flex-wrap */}
+          <div className='flex gap-6 px-5 sm:px-13 md:px-0 no-scrollbar overflow-x-auto flex-nowrap'>
+            {creativeCardsInfo.map((creativeCardInfo, index) => (
+              <div key={index}>
+                <CreativeCard {...creativeCardInfo} />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
-
     </main>
   );
 }
