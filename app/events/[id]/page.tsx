@@ -1,16 +1,21 @@
-import SpeakerTile from "@components/SpeakerTile"
-import SectionTitle from "@components/SectionTitle"
-import EventDetailsTile from "@components/EventDetailsTile"
-import OtherEventTile from "@components/otherEvent/OtherEventTile"
-import EventFirstImage from "@components/FirstImage/EventFirstImage"
-import { desc, mockEvents, speakers, superLongText } from "@constants/prime"
+'use client'
+
+import { useSearchParams } from 'next/navigation'
+import SpeakerTile from '@components/SpeakerTile'
+import SectionTitle from '@components/SectionTitle'
+import EventDetailsTile from '@components/EventDetailsTile'
+import OtherEventTile from '@components/otherEvent/OtherEventTile'
+import EventFirstImage from '@components/FirstImage/EventFirstImage'
+import { desc, mockEvents, speakers, superLongText } from '@constants/prime'
 
 const EventDetailsPage = () => {
+    const searchParams = useSearchParams()
+    const imgUrl = searchParams.get('url')
     return (
         <main className='mt-11 md:mt-34.25 px-5 md:px-27'>
             <EventFirstImage
                 title='Leadership Summit 2025'
-                imgUrl='/images/cathedral.png'
+                imgUrl={imgUrl ?? '/images/cathedral.png'}
                 description={desc}
             />
             <h2 className='text-center lora-font text-[2.25rem] font-medium capitalize text-tertiaryNavBarBackground mb-2 md:text-start mt-12.5 md:mt-32.5'>about event</h2>
@@ -42,7 +47,7 @@ const EventDetailsPage = () => {
                 </section>
                 {/* Other Events section */}
                 <section className='flex flex-col mt-12.5 md:mt-0'>
-                    <SectionTitle title='Other Events'/>
+                    <SectionTitle title='Other Events' />
                     <div className='flex flex-col gap-10 md:gap-20'>
                         {mockEvents.map((other, index) => (
                             <OtherEventTile
