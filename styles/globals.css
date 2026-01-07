@@ -71,7 +71,6 @@ body {
     font-family: var(--font-roboto)
 }
 
-
 .navBar {
     @apply flex w-full py-2.25 md:pl-20.5 md:pr-10.5 justify-between md:justify-around items-center px-4
 }
@@ -85,5 +84,5 @@ body {
 }
 
 .creativeCard {
-    @apply flex flex-col p-2.5 bg-white shadow-[0_0_32px_0_rgba(0,0,0,0.07)] rounded-xl
+    @apply flex flex-col p-2.5 bg-white shadow-[0_0_32px_0_rgba(0,0,0,0.07)] rounded-xl w-90
 }
