@@ -30,6 +30,7 @@
     --color-sectionTitleColor: #3E3232;
     --color-mainNavTileActive: #FEDA00;
     --color-authorSectionColor: #F5F5F5;
+    --color-eventUploadTextColor: #2B3674;
     --color-searchFieldTextColor: #ABABAB;
     --color-searchFieldBackground: #F7F7F7;
     --color-footerBackgroundColor: #0D2E40;
@@ -78,6 +79,10 @@ body {
 
 .roboto-font {
     font-family: var(--font-roboto)
+}
+
+.dmSans-font {
+    font-family: var(--font-dm-sans)
 }
 
 .navBar {

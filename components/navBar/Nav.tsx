@@ -28,7 +28,7 @@ const Nav = () => {
             <div className='hidden md:flex gap-4'>
                 <OutlinedButton
                     label='Log In'
-                    className='py-4.25 px-7.5 rounded-sm'
+                    className='md:py-4.25 md:px-7.5 rounded-sm'
                 />
                 <FilledButton
                     label='Get started'
