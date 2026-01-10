@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import UploadEventInputBar from '@components/upload/input'
+import { UploadEventInputBar } from '@components/input'
 
 const page = () => {
     return (

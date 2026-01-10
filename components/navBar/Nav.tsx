@@ -2,6 +2,7 @@ import Image from 'next/image'
 import SearchBar from './SearchBar'
 import MainNavTile from './MainNavTile'
 import { FilledButton, OutlinedButton } from '@components/Buttons'
+import Link from '@node_modules/next/link'
 
 const Nav = () => {
     return (
@@ -16,24 +17,32 @@ const Nav = () => {
                 />
 
                 <div className='hidden md:flex gap-15'>
-                    <MainNavTile href='/' label='HOME' active={true}/>
-                    <MainNavTile href='/about' label='ABOUT' active={false}/>
-                    <MainNavTile href='/help' label='HELP' active={false}/>
-                    <MainNavTile href='/contact' label='CONTACT' active={false}/>
+                    <MainNavTile href='/' label='HOME' active={true} />
+                    <MainNavTile href='/about' label='ABOUT' active={false} />
+                    <MainNavTile href='/help' label='HELP' active={false} />
+                    <MainNavTile href='/contact' label='CONTACT' active={false} />
                 </div>
             </div>
 
-            <SearchBar/>
+            <SearchBar />
 
             <div className='hidden md:flex gap-4'>
-                <OutlinedButton
-                    label='Log In'
-                    className='md:py-4.25 md:px-7.5 rounded-sm'
-                />
-                <FilledButton
-                    label='Get started'
-                    className='py-4.25 px-7.5 rounded-[.3125rem]'
-                />
+                <Link
+                    href='/auth/login'
+                >
+                    <OutlinedButton
+                        label='Log In'
+                        className='md:py-4.25 md:px-7.5 rounded-sm'
+                    />
+                </Link>
+                <Link
+                    href='/auth/signUp'
+                >
+                    <FilledButton
+                        label='Get started'
+                        className='py-4.25 px-7.5 rounded-[.3125rem]'
+                    />
+                </Link>
             </div>
 
             <Image
