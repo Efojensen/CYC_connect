@@ -54,7 +54,7 @@ const SignUp = () => {
 
 export default SignUp
 
-const OAuthButton = ({src}: {src: string}) => {
+export const OAuthButton = ({src}: {src: string}) => {
     return (
         <div className='flex size-9 p-2.5 bg-tertiaryNavBarBackground rounded-[.4375rem]'>
             <Image
