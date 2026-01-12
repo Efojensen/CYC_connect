@@ -34,6 +34,12 @@ const page = () => {
 
             <p className='text-sm leading-3.5 tracking-[-0.0175rem] font-medium dmSans-font mb-1.75 mt-20 text-eventUploadTextColor'>Date*</p>
             <UploadEventInputBar hintText='Choose a date' type='date'/>
+
+            <p className='text-sm leading-3.5 tracking-[-0.0175rem] font-medium dmSans-font mb-1.75 mt-20 text-eventUploadTextColor'>Location*</p>
+            <UploadEventInputBar hintText='e.g Tema Comm 1, OLAM'/>
+
+            <p className='text-sm leading-3.5 tracking-[-0.0175rem] font-medium dmSans-font mb-1.75 mt-20 text-eventUploadTextColor'>Full address*</p>
+            <UploadEventInputBar hintText='Street address, city, state, zip code'/>
         </main>
     )
 }
