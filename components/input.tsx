@@ -3,32 +3,47 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
-export const UploadEventInputBar = ({ hintText }: { hintText: string }) => {
+interface UploadEventInputBarProps {
+    src?: string
+    hintText: string
+    type?: React.HTMLInputTypeAttribute
+}
+
+export const UploadEventInputBar:React.FC<UploadEventInputBarProps> = ({ src, hintText, type='text' }) => {
     const [text, setText] = useState<string>('')
 
     return (
-        <div className='py-1.75 px-2.5 flex space-between items-center rounded-[.625rem] border border-[#E0E5F2] bg-[#E0E5F2]'>
+        <div className='py-1.75 px-2.5 flex space-between items-center rounded-[.625rem] border border-[#E0E5F2] bg-[#FFF] justify-between hover:cursor-pointer'>
             <input
+                type={type}
                 value={text}
                 placeholder={hintText}
                 onChange={(e) => { setText(e.target.value) }}
                 className='focus:outline-none w-full dmSans-font text-[#94A3B8] text-sm font-medium leading-3.5 tracking-[-0.0175rem]'
             />
+            {src && (
+                <Image
+                    alt={src}
+                    src={src}
+                    width={16}
+                    height={16}
+                />
+            )}
         </div>
     )
 }
 
 interface AuthInputProps {
-    hintText: string
     value: string
-    onChange: (value: string) => void
+    hintText: string
     isPassword?: boolean
+    onChange: (value: string) => void
 }
 
 export const AuthInput: React.FC<AuthInputProps> = ({
-    hintText,
     value,
     onChange,
+    hintText,
     isPassword = false,
 }) => {
     const [show, setShow] = useState(false)

@@ -3,7 +3,7 @@ import { UploadEventInputBar } from '@components/input'
 
 const page = () => {
     return (
-        <main className='mt-52 px-2 md:px-91'>
+        <main className='md:mt-52 mt-12 px-2 md:px-91'>
             <p className='text-sm leading-3.5 tracking-[-0.0175rem] font-medium dmSans-font mb-1.75 text-eventUploadTextColor'>Event Title*</p>
             <UploadEventInputBar hintText='Leadership Summit 2025'/>
 
@@ -29,9 +29,11 @@ const page = () => {
                     placeholder='Enter in the description of the event'
                     className='w-full focus:outline-none mt-1 pl-2'
                 >
-
                 </textarea>
             </div>
+
+            <p className='text-sm leading-3.5 tracking-[-0.0175rem] font-medium dmSans-font mb-1.75 mt-20 text-eventUploadTextColor'>Date*</p>
+            <UploadEventInputBar hintText='Choose a date' type='date'/>
         </main>
     )
 }
