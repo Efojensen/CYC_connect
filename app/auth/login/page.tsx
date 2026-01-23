@@ -9,11 +9,11 @@ const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const url = process.env["MASTER"]
+    const url = process.env["NEXT_PUBLIC_MASTER"]
 
     const sendFormData = async () => {
         try {
-            const res = await fetch(`${url}/admin/login`, {
+            const res = await fetch(`${url}admin/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -34,7 +34,7 @@ const Login = () => {
 
         } catch (error) {
             console.error(error)
-            alert('Something went wrong. Please try again later')
+            alert(error)
             return
         }
     }
@@ -69,7 +69,7 @@ const Login = () => {
                 </div>
                 <button
                     onClick={sendFormData}
-                    className='w-full bg-tertiaryNavBarBackground py-3.5 font-semibold leading-[1.05rem] text-sm text-white rounded-[.625rem]'
+                    className='w-full bg-tertiaryNavBarBackground py-3.5 font-semibold leading-[1.05rem] text-sm text-white rounded-[.625rem] cursor-pointer'
                 >
                     Login
                 </button>
