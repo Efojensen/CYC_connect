@@ -9,6 +9,36 @@ const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const url = process.env["MASTER"]
+
+    const sendFormData = async () => {
+        try {
+            const res = await fetch(`${url}/admin/login`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
+            })
+
+            if (!res.ok) {
+                alert('Error logging in')
+                return
+            }
+
+            const data = await res.json()
+            console.log(data.token)
+
+        } catch (error) {
+            console.error(error)
+            alert('Something went wrong. Please try again later')
+            return
+        }
+    }
+
     return (
         <main>
             <div className='flex flex-col m-auto px-6 pt-6 pb-8 w-full md:w-130 gap-5 shadow-md mt-20 md:mt-21.75'>
@@ -34,10 +64,13 @@ const Login = () => {
                     <Link
                         href=''
                     >
-                        <OAuthButton src='/svgs/google.svg'/>
+                        <OAuthButton src='/svgs/google.svg' />
                     </Link>
                 </div>
-                <button className='w-full bg-tertiaryNavBarBackground py-3.5 font-semibold leading-[1.05rem] text-sm text-white rounded-[.625rem]'>
+                <button
+                    onClick={sendFormData}
+                    className='w-full bg-tertiaryNavBarBackground py-3.5 font-semibold leading-[1.05rem] text-sm text-white rounded-[.625rem]'
+                >
                     Login
                 </button>
                 <div className='flex items-center justify-center gap-1'>
