@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "@node_modules/next/link"
 import SubNavBarTile from "./SubNavBarTile"
 
 const SubNavBar = () => {
@@ -48,7 +49,7 @@ const SubNavBar = () => {
                     links={[
 
                     ]}
-                    />
+                />
                 <SubNavBarTile
                     label='Newsletter'
                     items={[
@@ -77,15 +78,20 @@ const SubNavBar = () => {
                 />
             </div>
 
-            <div className='flex gap-2 items-center'>
-                <Image
-                    width={24}
-                    height={24}
-                    alt='profile image'
-                    src='/svgs/empty-profile.svg'
-                />
-                <p className='text-[.875rem] inter-font leading-5.5 text-white'>Account</p>
-            </div>
+            {
+                <Link
+                    href='/events/upload'
+                    className='flex gap-2 items-center cursor-pointer'
+                >
+                    <Image
+                        width={24}
+                        height={24}
+                        alt='profile image'
+                        src='/svgs/upload.svg'
+                        className='invert-0 brightness-200'
+                    />
+                    <p className='text-[.875rem] inter-font leading-5.5 text-white'>Upload event</p>
+                </Link>}
         </aside>
     )
 }

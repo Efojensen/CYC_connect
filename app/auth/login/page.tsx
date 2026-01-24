@@ -30,7 +30,7 @@ const Login = () => {
             }
 
             const data = await res.json()
-            console.log(data.token)
+            localStorage.setItem('auth_token', data.token);
 
         } catch (error) {
             console.error(error)

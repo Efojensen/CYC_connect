@@ -4,21 +4,30 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 interface UploadEventInputBarProps {
-    src?: string
+    src?: string,
+    value: string,
     hintText: string
+    onChange?: (value: string) => void
+    onChangeDate?: (value: string) => void
     type?: React.HTMLInputTypeAttribute
 }
 
-export const UploadEventInputBar:React.FC<UploadEventInputBarProps> = ({ src, hintText, type='text' }) => {
-    const [text, setText] = useState<string>('')
+export const UploadEventInputBar:React.FC<UploadEventInputBarProps> = ({ src, hintText, type='text', value, onChange, onChangeDate }) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (onChangeDate) {
+            onChangeDate(e.target.value)
+            return
+        }
 
+        onChange?.(e.target.value)
+    }
     return (
         <div className='py-1.75 px-2.5 flex space-between items-center rounded-[.625rem] border border-[#E0E5F2] bg-[#FFF] justify-between hover:cursor-pointer'>
             <input
                 type={type}
-                value={text}
+                value={value}
                 placeholder={hintText}
-                onChange={(e) => { setText(e.target.value) }}
+                onChange={handleChange}
                 className='focus:outline-none w-full dmSans-font text-[#94A3B8] text-sm font-medium leading-3.5 tracking-[-0.0175rem]'
             />
             {src && (
