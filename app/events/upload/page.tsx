@@ -54,6 +54,7 @@ const Page = () => {
             </div>
 
             <p className='text-sm leading-3.5 tracking-[-0.0175rem] font-medium dmSans-font mb-1.75 mt-20 text-eventUploadTextColor'>Date*</p>
+            {/* <UploadEventInputBar hintText='Choose a date' type='date' value={date} onChange={() => { }} onChangeDate={setDate} /> */}
             <UploadEventInputBar hintText='Choose a date' type='date' value={date} onChange={() => { }} onChangeDate={(value) => {
                 const selectedDate = new Date(value)
                 setDate(selectedDate.toISOString())
