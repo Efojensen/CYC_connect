@@ -6,26 +6,23 @@ import { UploadEventInputBar } from '@components/input'
 
 const Page = () => {
     const [date, setDate] = useState('')
+    const [city, setCity] = useState('')
+    const [venue, setVenue] = useState('')
+    const [about, setAbout] = useState('')
     const [title, setTitle] = useState('')
     const [address, setAddress] = useState('')
-    const [location, setLocation] = useState('')
+    const [duration, setDuration] = useState('')
+    const [startTime, setStartTime] = useState('')
     const [description, setDescription] = useState('')
     const fileInputRef = useRef<HTMLInputElement>(null)
     const [imageFile, setImageFile] = useState<File | null>(null)
-
-    const modelData = () => {
-        console.log("Date", date)
-        console.log("Title", title)
-        console.log("Address", address)
-        console.log("Location", location)
-        console.log("Image File", imageFile)
-        console.log("Description", description)
-    }
 
     // ⬇️ ADDED: open file picker
     const openFileDialog = () => {
         fileInputRef.current?.click()
     }
+
+    // const url = process.env["NEXT_PUBLIC_MASTER"]
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0]
@@ -39,6 +36,31 @@ const Page = () => {
 
         setImageFile(file)
     }
+
+    // const uploadEventDetails = async () => {
+    //     const formData = new FormData()
+
+    //     const eventData = {
+    //         title,
+    //         description,
+    //         location,
+    //     }
+    //     formData.append('event', JSON.stringify(eventData))
+
+    //     const token = localStorage.getItem('auth_token')
+
+    //     try {
+    //         const res = await fetch(`${url}events/new`, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Authorization': `Bearer ${token}`
+    //             },
+    //             body:
+    //         })
+    //     } catch (error) {
+
+    //     }
+    // }
 
     return (
         <main className='md:mt-52 mt-12 px-2 md:px-91'>
@@ -96,7 +118,7 @@ const Page = () => {
                 Description*
             </p>
 
-            <div className='flex flex-column w-full border-2 border-tertiaryNavBarBackground h-65 md:h-134.75'>
+            <div className='flex flex-column w-full border-2 border-tertiaryNavBarBackground h-65 md:h-14.75'>
                 <textarea
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
@@ -106,38 +128,71 @@ const Page = () => {
             </div>
 
             <p className='text-sm leading-3.5 tracking-[-0.0175rem] font-medium dmSans-font mb-1.75 mt-20 text-eventUploadTextColor'>
-                Date*
+                About*
+            </p>
+            <div className='flex flex-column w-full border-2 border-tertiaryNavBarBackground h-65 md:h-24.75'>
+                <textarea
+                    value={about}
+                    onChange={(e) => setAbout(e.target.value)}
+                    placeholder='Mention some details about the event'
+                    className='w-full focus:outline-none mt-1 pl-2'
+                />
+            </div>
+
+            <p className='text-sm leading-3.5 tracking-[-0.0175rem] font-medium dmSans-font mb-1.75 mt-20 text-eventUploadTextColor'>
+                Date & Time*
             </p>
 
+            <div className='flex gap-3 w-full items-center'>
+                <UploadEventInputBar
+                    hintText='Choose a date'
+                    type='date'
+                    value={date}
+                    onChangeDate={setDate}
+                />
+                <UploadEventInputBar
+                    hintText='05:30 AM'
+                    type='time'
+                    value={startTime}
+                    onChangeDate={setStartTime}
+                />
+            </div>
+
+            <p className='text-sm leading-3.5 tracking-[-0.0175rem] font-medium dmSans-font mb-1.75 mt-20 text-eventUploadTextColor'>
+                Duration
+            </p>
             <UploadEventInputBar
-                hintText='Choose a date'
-                type='date'
-                value={date}
-                onChangeDate={setDate}
+                hintText='2 days'
+                value={duration}
+                onChangeDate={setDuration}
             />
 
             <p className='text-sm leading-3.5 tracking-[-0.0175rem] font-medium dmSans-font mb-1.75 mt-20 text-eventUploadTextColor'>
-                Location*
+                Address & City*
             </p>
 
-            <UploadEventInputBar
-                hintText='e.g Tema Comm 1, OLAM'
-                value={location}
-                onChange={setLocation}
-            />
+            <div className='flex gap-3 w-full items-center'>
+                <UploadEventInputBar
+                    hintText='425 Lake Road'
+                    value={address}
+                    onChange={setAddress}
+                />
+                <UploadEventInputBar
+                    hintText='Kumasi'
+                    value={city}
+                    onChange={setCity}
+                />
+            </div>
 
-            <p className='text-sm leading-3.5 tracking-[-0.0175rem] font-medium dmSans-font mb-1.75 mt-20 text-eventUploadTextColor'>
-                Full address*
-            </p>
-
-            <UploadEventInputBar
-                hintText='Street address, city, state, zip code'
-                value={address}
-                onChange={setAddress}
-            />
+            <p className='text-sm leading-3.5 tracking-[-0.0175rem] font-medium dmSans-font mb-1.75 mt-20 text-eventUploadTextColor'>Venue</p>
+                <UploadEventInputBar
+                    hintText='Tema Comm. 1 OLAM'
+                    value={venue}
+                    onChange={setVenue}
+                />
 
             <button
-                onClick={modelData}
+                // onClick={uploadEventDetails}
                 className='w-full bg-tertiaryNavBarBackground py-3.5 font-semibold leading-[1.05rem] text-sm text-white rounded-[.625rem] cursor-pointer mt-12'
             >
                 Post event

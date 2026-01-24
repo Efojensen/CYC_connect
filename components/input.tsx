@@ -22,7 +22,7 @@ export const UploadEventInputBar:React.FC<UploadEventInputBarProps> = ({ src, hi
         onChange?.(e.target.value)
     }
     return (
-        <div className='py-1.75 px-2.5 flex space-between items-center rounded-[.625rem] border border-[#E0E5F2] bg-[#FFF] justify-between hover:cursor-pointer'>
+        <div className='py-1.75 px-2.5 flex space-between items-center rounded-[.625rem] border border-[#E0E5F2] bg-[#FFF] justify-between hover:cursor-pointer flex-1'>
             <input
                 type={type}
                 value={value}
