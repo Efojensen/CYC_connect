@@ -138,7 +138,7 @@ const Page = () => {
 
             <button
                 onClick={modelData}
-                className='w-full bg-tertiaryNavBarBackground py-3.5 font-semibold leading-[1.05rem] text-sm text-white rounded-[.625rem] cursor-pointer'
+                className='w-full bg-tertiaryNavBarBackground py-3.5 font-semibold leading-[1.05rem] text-sm text-white rounded-[.625rem] cursor-pointer mt-12'
             >
                 Post event
             </button>
