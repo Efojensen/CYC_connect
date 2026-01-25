@@ -22,7 +22,7 @@ const Page = () => {
         fileInputRef.current?.click()
     }
 
-    // const url = process.env["NEXT_PUBLIC_MASTER"]
+    const url = process.env["NEXT_PUBLIC_MASTER"]
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0]
@@ -37,30 +37,55 @@ const Page = () => {
         setImageFile(file)
     }
 
-    // const uploadEventDetails = async () => {
-    //     const formData = new FormData()
+    const toDateTime = (date: string, time: string): Date | null => {
+        if (!date || !time) return null
 
-    //     const eventData = {
-    //         title,
-    //         description,
-    //         location,
-    //     }
-    //     formData.append('event', JSON.stringify(eventData))
+        // ISO-8601 safe format
+        return new Date(`${date}T${time}`)
+    }
 
-    //     const token = localStorage.getItem('auth_token')
 
-    //     try {
-    //         const res = await fetch(`${url}events/new`, {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Authorization': `Bearer ${token}`
-    //             },
-    //             body:
-    //         })
-    //     } catch (error) {
+    const uploadEventDetails = async () => {
+        const formData = new FormData()
 
-    //     }
-    // }
+        const eventData = {
+            title: title,
+            description: description,
+            about: about,
+            dateAndTime: {
+                duration: duration,
+                startDateTime: toDateTime(date, startTime),
+            },
+            location: {
+                venue: venue,
+                address: address,
+                city: city
+            }
+        }
+        formData.append('event', JSON.stringify(eventData))
+        if (imageFile) {
+            formData.append('image', imageFile)
+        }
+
+        const token = localStorage.getItem('auth_token')
+
+        try {
+            const res = await fetch(`${url}events/new`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                },
+                body: formData
+            })
+
+            if (!res.ok) {
+                alert('something went wrong')
+            }
+        } catch (error) {
+            console.error(error)
+            alert(error)
+        }
+    }
 
     return (
         <main className='md:mt-52 mt-12 px-2 md:px-91'>
@@ -185,14 +210,14 @@ const Page = () => {
             </div>
 
             <p className='text-sm leading-3.5 tracking-[-0.0175rem] font-medium dmSans-font mb-1.75 mt-20 text-eventUploadTextColor'>Venue</p>
-                <UploadEventInputBar
-                    hintText='Tema Comm. 1 OLAM'
-                    value={venue}
-                    onChange={setVenue}
-                />
+            <UploadEventInputBar
+                hintText='Tema Comm. 1 OLAM'
+                value={venue}
+                onChange={setVenue}
+            />
 
             <button
-                // onClick={uploadEventDetails}
+                onClick={uploadEventDetails}
                 className='w-full bg-tertiaryNavBarBackground py-3.5 font-semibold leading-[1.05rem] text-sm text-white rounded-[.625rem] cursor-pointer mt-12'
             >
                 Post event
