@@ -13,6 +13,7 @@ const EventFirstImage: React.FC<EventFirstImageProps> = ({ imgUrl, title, descri
                 src={imgUrl}
                 width={390}
                 height={198}
+                unoptimized
                 alt='event image'
                 sizes="(min-width: 768px) 64vw, 100vw"
                 className='object-cover relative w-full h-full md:rounded-[.875rem]'

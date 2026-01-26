@@ -41,11 +41,11 @@ const FirstImage: React.FC<FirstImageProps> = ({ date, image, month, title, auth
                             month: 'long',
                             day: 'numeric'
                         })}
-                        icon='/svgs/firstImage/time.svg'
+                        icon='/svgs/firstImage/date.svg'
                     />
                     <MetaTile
                         desc='20 mins'
-                        icon='/svgs/firstImage/profile.svg'
+                        icon='/svgs/firstImage/time.svg'
                     />
                 </div>
             </div>
