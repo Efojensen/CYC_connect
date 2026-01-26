@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import InfoTile from '@components/InfoTile';
+import { EventItem } from '@declarations/types';
 import SectionTitle from '@components/SectionTitle';
 import CreativeCard from '@components/CreativeCard';
 import FirstImage from '@components/FirstImage/FirstImage';
 import { creativeCardsInfo, formations, stories } from '@constants/prime';
-import { EventItem } from '@declarations/types';
 
 export default async function Home() {
   const url = process.env['NEXT_PUBLIC_MASTER']
