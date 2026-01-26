@@ -3,9 +3,15 @@ import InfoTile from '@components/InfoTile';
 import SectionTitle from '@components/SectionTitle';
 import CreativeCard from '@components/CreativeCard';
 import FirstImage from '@components/FirstImage/FirstImage';
-import { creativeCardsInfo, events, formations, stories } from '@constants/prime';
+import { creativeCardsInfo, formations, stories } from '@constants/prime';
+import { EventItem } from '@declarations/types';
 
-export default function Home() {
+export default async function Home() {
+  const url = process.env['NEXT_PUBLIC_MASTER']
+
+  const res = await fetch(`${url}events`)
+  const cloudEvents: EventItem[] = await res.json()
+
   return (
     <main className='flex flex-col mt-17.5 px-5 sm:px-13 md:px-27 items-center'>
       {/* The first large image */}
@@ -21,15 +27,19 @@ export default function Home() {
         <SectionTitle title="Events" />
         <div className="relative -mx-5 sm:-mx-13 md:mx-0">
           <div className="flex gap-6 px-5 sm:px-13 md:px-0 overflow-x-auto flex-nowrap no-scrollbar">
-            {events.map((event, index) => (
+            {cloudEvents.map((event, index) => (
               <div key={index} className="shrink-0">
-                <InfoTile {...event} />
+                <InfoTile
+                  id={event.id}
+                  title={event.title}
+                  imgUrl={event.preAuthReq}
+                  previewContent={event.description}
+                />
               </div>
             ))}
           </div>
         </div>
       </section>
-
 
       <section className='flex flex-col w-full my-38'>
         <SectionTitle title='Formations' />

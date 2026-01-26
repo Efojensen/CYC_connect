@@ -16,7 +16,6 @@ export interface EventDetailsTileProps {
 
 export interface InfoTileProps {
     id: string
-    alt: string
     title: string
     imgUrl: string
     previewContent: string
@@ -40,4 +39,13 @@ export interface SpeakerTileProps {
 export interface FooterLink {
     href: string
     text: string
+}
+
+export interface EventItem {
+    id: string
+    title: string
+    category: string
+    objectName: string
+    preAuthReq: string
+    description: string
 }

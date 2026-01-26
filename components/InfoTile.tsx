@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from '@node_modules/next/link'
 import { InfoTileProps } from '@declarations/types'
 
-const InfoTile: React.FC<InfoTileProps> = ({ title, imgUrl, previewContent, alt, authorInfo, id }) => {
+const InfoTile: React.FC<InfoTileProps> = ({ title, imgUrl, previewContent, authorInfo, id }) => {
     return (
         <Link
             href={{
@@ -14,7 +14,8 @@ const InfoTile: React.FC<InfoTileProps> = ({ title, imgUrl, previewContent, alt,
             className='flex flex-col rounded-xl shadow-[0_0_32px_0_rgba(0_0_0_0.07)] bg-white w-89.5 md:w-90'
         >
             <Image
-                alt={alt}
+                // TODO: might have to get a little creative here
+                alt='graphical representation of the said event'
                 width={360}
                 height={200}
                 src={imgUrl}

@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
       remotePatterns: [
         {
           protocol: "https",
-          hostname: "your-bucket.example.com",
+          hostname: "objectstorage.us-phoenix-1.oraclecloud.com",
         },
       ],
     },
