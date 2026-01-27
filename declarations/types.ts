@@ -49,3 +49,19 @@ export interface EventItem {
     preAuthReq: string
     description: string
 }
+
+export interface EventDetails {
+    title: string
+    description: string
+    about: string
+    dateAndTime: {
+        duration: string
+        startDateTime: Date
+    },
+    location: {
+        venue: string
+        address: string
+        city: string
+    },
+    preAuthReq: string
+}

@@ -7,9 +7,6 @@ const InfoTile: React.FC<InfoTileProps> = ({ title, imgUrl, previewContent, auth
         <Link
             href={{
                 pathname: `/events/${id}`,
-                query: {
-                    url: imgUrl
-                }
             }}
             className='flex flex-col rounded-xl shadow-[0_0_32px_0_rgba(0_0_0_0.07)] bg-white w-89.5 md:w-90'
         >

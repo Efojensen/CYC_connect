@@ -1,30 +1,47 @@
-'use client'
-
-import { useSearchParams } from 'next/navigation'
 import SpeakerTile from '@components/SpeakerTile'
+import { EventDetails } from '@declarations/types'
 import SectionTitle from '@components/SectionTitle'
 import EventDetailsTile from '@components/EventDetailsTile'
 import OtherEventTile from '@components/otherEvent/OtherEventTile'
 import EventFirstImage from '@components/FirstImage/EventFirstImage'
-import { desc, mockEvents, speakers, superLongText } from '@constants/prime'
+import { mockEvents, speakers, } from '@constants/prime'
 
-const EventDetailsPage = () => {
-    const searchParams = useSearchParams()
-    const imgUrl = searchParams.get('url')
+interface EventDetailsPageProps {
+    params: { id: number }
+}
+
+export default async function EventDetailsPage({
+    params,
+}: EventDetailsPageProps) {
+    const url = process.env['NEXT_PUBLIC_MASTER']
+
+    const resolvedParams = await params;
+    const id = resolvedParams.id
+
+    const res = await fetch(`${url}events/${id}`)
+    const eventDetailsRaw: EventDetails = await res.json()
+    const eventDetails: EventDetails = {
+        ...eventDetailsRaw,
+        dateAndTime: {
+            duration: eventDetailsRaw.dateAndTime.duration,
+            startDateTime: new Date(eventDetailsRaw.dateAndTime.startDateTime)
+        }
+    }
+
     return (
         <main className='mt-11 md:mt-34.25 px-5 md:px-27'>
             <EventFirstImage
-                title='Leadership Summit 2025'
-                imgUrl={imgUrl ?? '/images/cathedral.png'}
-                description={desc}
+                title={eventDetails.title}
+                imgUrl={eventDetails.preAuthReq ?? '/images/cathedral.png'}
+                description={eventDetails.description}
             />
             <h2 className='text-center lora-font text-[2.25rem] font-medium capitalize text-tertiaryNavBarBackground mb-2 md:text-start mt-12.5 md:mt-32.5'>about event</h2>
             <div className='flex flex-col md:flex-row md:justify-between md:mb-22.25'>
-                <p className='inter-font text-[1rem] md:text-2xl leading-7 md:leading-8 text-black mb-12.5 md:w-[57%]'>{superLongText}</p>
+                <p className='inter-font text-[1rem] md:text-2xl leading-7 md:leading-8 text-black mb-12.5 md:w-[57%]'>{eventDetails.about}</p>
                 <EventDetailsTile
-                    time='9am - 3pm'
-                    date={new Date()}
-                    location='Cape Coast, Ridge Royal Hotel'
+                    time={eventDetails.dateAndTime.duration}
+                    date={eventDetails.dateAndTime.startDateTime}
+                    location={`${eventDetails.location.address}, ${eventDetails.location.venue}`}
                     speaker='Fr. Evans Halolo'
                 />
             </div>
@@ -65,5 +82,3 @@ const EventDetailsPage = () => {
         </main>
     )
 }
-
-export default EventDetailsPage
