@@ -12,11 +12,6 @@ export const socialLinks = [
         href: 'https://www.instagram.com/ghancyc?igsh=MmFsZGQ5NzI4dDRn&utm_source=qr'
     },
     {
-        src: '/svgs/footer/linkedin.svg',
-        alt: 'Ghana cyc connect linkedin link',
-        href: ''
-    },
-    {
         src: '/svgs/footer/twitter.svg',
         alt: 'Ghana cyc connect twitter link',
         href: ''
