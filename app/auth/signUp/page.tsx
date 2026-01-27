@@ -2,7 +2,9 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import LoadingSpinner from '@app/loading'
+import { useRouter } from 'next/navigation'
+import { useState, useEffect } from 'react'
 import { AuthInput } from '@components/input'
 
 const SignUp = () => {
@@ -10,15 +12,24 @@ const SignUp = () => {
     const [email, setEmail] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [isLoading, setIsLoading] = useState(false)
     const [confirmPassword, setConfirmPassword] = useState('')
 
+    const router = useRouter()
+
     const url = process.env["NEXT_PUBLIC_MASTER"]
+
+    useEffect(() => {
+        document.body.style.overflow = isLoading ? 'hidden' : 'auto'
+    }, [isLoading])
 
     const sendFormData = async () => {
         if (password !== confirmPassword) {
             alert('Ensure passwords match!')
             return
         }
+
+        setIsLoading(true)
 
         try {
             const res = await fetch(`${url}admin/new`, {
@@ -27,10 +38,10 @@ const SignUp = () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    name: name.toLowerCase(),
-                    email: email.toLowerCase(),
-                    password: password,
-                    username: username.toLowerCase()
+                    name: name.toLowerCase().trim(),
+                    email: email.toLowerCase().trim(),
+                    password: password.trim(),
+                    username: username.toLowerCase().trim()
                 })
             })
 
@@ -41,15 +52,23 @@ const SignUp = () => {
 
             alert('Sign up successful!')
 
+            router.replace('/auth/login')
         } catch (error) {
             console.error(error)
             alert('Something went wrong. Please try again later')
             return
+        } finally {
+            setIsLoading(false)
         }
     }
 
     return (
         <main>
+            {isLoading && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+                    <LoadingSpinner />
+                </div>
+            )}
             <div className='flex flex-col m-auto px-6 pt-6 pb-8 w-full md:w-130 gap-5 shadow-md mt-20 md:mt-21.75'>
                 <h2 className='lora-font text-[2rem] font-semibold leading-[2.4rem] text-specialBlackTextColor'>Create Account</h2>
                 <div className='flex flex-col gap-3'>
@@ -90,6 +109,7 @@ const SignUp = () => {
                     </Link>
                 </div>
                 <button
+                    disabled={isLoading}
                     onClick={sendFormData}
                     className='w-full bg-tertiaryNavBarBackground py-3.5 font-semibold leading-[1.05rem] text-sm text-white rounded-[.625rem] cursor-pointer'
                 >

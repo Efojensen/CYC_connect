@@ -1,7 +1,9 @@
 'use client'
 
 import Image from 'next/image'
-import { useRef, useState } from 'react'
+import LoadingSpinner from '@app/loading'
+import { useRouter } from 'next/navigation'
+import { useRef, useState, useEffect } from 'react'
 import { UploadEventInputBar } from '@components/input'
 
 const Page = () => {
@@ -13,9 +15,16 @@ const Page = () => {
     const [address, setAddress] = useState('')
     const [duration, setDuration] = useState('')
     const [startTime, setStartTime] = useState('')
+    const [isLoading, setIsLoading] = useState(false)
     const [description, setDescription] = useState('')
     const fileInputRef = useRef<HTMLInputElement>(null)
     const [imageFile, setImageFile] = useState<File | null>(null)
+
+    const router = useRouter()
+
+    useEffect(() => {
+        document.body.style.overflow = isLoading ? 'hidden' : 'auto'
+    }, [isLoading])
 
     // ⬇️ ADDED: open file picker
     const openFileDialog = () => {
@@ -46,20 +55,22 @@ const Page = () => {
 
 
     const uploadEventDetails = async () => {
+        setIsLoading(true)
+
         const formData = new FormData()
 
         const eventData = {
-            title: title,
-            description: description,
-            about: about,
+            title: title.trim(),
+            description: description.trim(),
+            about: about.trim(),
             dateAndTime: {
-                duration: duration,
+                duration: duration.trim(),
                 startDateTime: toDateTime(date, startTime),
             },
             location: {
-                venue: venue,
-                address: address,
-                city: city
+                venue: venue.trim(),
+                address: address.trim(),
+                city: city.trim()
             }
         }
         formData.append('event', JSON.stringify(eventData))
@@ -80,15 +91,25 @@ const Page = () => {
 
             if (!res.ok) {
                 alert('something went wrong')
+                return
             }
+
+            router.push('/')
         } catch (error) {
             console.error(error)
             alert(error)
+        } finally {
+            setIsLoading(false)
         }
     }
 
     return (
         <main className='md:mt-52 mt-12 px-2 md:px-91'>
+            {isLoading && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+                    <LoadingSpinner />
+                </div>
+            )}
             <p className='text-sm leading-3.5 tracking-[-0.0175rem] font-medium dmSans-font mb-1.75 text-eventUploadTextColor'>
                 Event Title*
             </p>
@@ -217,6 +238,7 @@ const Page = () => {
             />
 
             <button
+                disabled={isLoading}
                 onClick={uploadEventDetails}
                 className='w-full bg-tertiaryNavBarBackground py-3.5 font-semibold leading-[1.05rem] text-sm text-white rounded-[.625rem] cursor-pointer mt-12'
             >
